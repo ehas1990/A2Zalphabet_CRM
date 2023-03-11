@@ -11,7 +11,7 @@
     <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
     <meta content="Themesbrand" name="author" />
     <!-- App favicon -->
-    <link rel="shortcut icon" href="assets/images/favicon.ico">
+    <link rel="shortcut icon" href="assets/images/a2z_icon.jpg">
 
     <!-- Sweet Alert css-->
     <link href="assets/libs/sweetalert2/sweetalert2.min.css" rel="stylesheet" type="text/css" />
@@ -808,15 +808,35 @@
                         </li>
                         <li class="nav-item">
                             <a class="nav-link menu-link" href="usermanagement.html">
-                                <i class="ri-pulse-line"></i> <span data-key="t-widgets">Users Management</span>
+                                <i class="bx bx-user"></i> <span data-key="t-widgets">Users Management</span>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link menu-link" href="lead.html">
+                            <a class="nav-link menu-link" href="leadsmanagement.html">
                                 <i class="ri-pulse-line"></i> <span data-key="t-widgets">Leads Management</span>
                             </a>
                         </li>
-
+                        <li class="nav-item">
+                            <a href="#sidebarEmail" class="nav-link menu-link collapsed" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarEmail" data-key="t-email">
+                                <i class="bx bx-calendar"></i><span data-key="t-widgets">Follow Up remainder </span>
+                            </a>
+                            <div class="menu-dropdown collapse" id="sidebarEmail" >
+                            <ul class="nav nav-sm flex-column">
+                            <li class="nav-item">
+                            <a href="tomorrow.html" class="nav-link" data-key="t-mailbox"> Tomorrow Date </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="dayafter.html" class="nav-link" data-key="t-mailbox">Day After Tomorrow </a>
+                            </li>
+                           
+                            </ul>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link menu-link" href="helpcenter.html">
+                                <i class="lab las la-headset"></i> <span data-key="t-widgets">Help Center</span>
+                            </a>
+                        </li>
                     </ul>
                 </div>
                 <!-- Sidebar -->
@@ -928,22 +948,22 @@
                                                         <i class="ri-more-2-fill"></i>
                                                         </a>
                                                         
-                                                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                                        <ul class="dropdown-menu " aria-labelledby="dropdownMenuLink">
                                                         <li><a class="dropdown-item"  href="pages-profile.html">View</a></li>
-                                                        <li class="nav-item">
-                                                            <a class="nav-link menu-link" href="#sidebarMaps" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarMaps">
+                                                        <li>
+                                                            <a class="dropdown-item" href="#sidebarMaps" data-bs-toggle="collapse" role="button" aria-expanded="true" >
                                                                 <span data-key="t-maps">Edit</span>
                                                             </a>
-                                                            <div class="collapse menu-dropdown" id="sidebarMaps">
-                                                                <ul class="nav nav-sm flex-column">
+                                                            <div class=" simplebar-offset menu-dropdown offset" id="sidebarMaps">
+                                                                <ul class="  nav nav-sm flex-column">
                                                                     <li class="nav-item">
                                                                         <a href="maps-google.html" class="nav-link" data-key="t-google">
-                                                                            Active
+                                                                            -Active
                                                                         </a>
                                                                     </li>
                                                                     <li class="nav-item">
                                                                         <a href="maps-vector.html" class="nav-link" data-key="t-vector">
-                                                                           Deactive
+                                                                           -Deactive
                                                                         </a>
                                                                     </li>
                                                                   
@@ -970,37 +990,37 @@
                                                         
                                                         <td><span class="badge badge-soft-success">Active</span></td>
                                                         <td>
-                                                        <div class="dropdown">
-                                                        <a href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
-                                                        <i class="ri-more-2-fill"></i>
-                                                        </a>
-                                                        
-                                                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                                                        <li><a class="dropdown-item"  href="pages-profile.html">View</a></li>
-                                                        <li class="nav-item">
-                                                            <a class="nav-link menu-link" href="#sidebarMaps" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarMaps">
-                                                                <span data-key="t-maps">Edit</span>
+                                                            <div class="dropdown">
+                                                            <a href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                                                            <i class="ri-more-2-fill"></i>
                                                             </a>
-                                                            <div class="collapse menu-dropdown" id="sidebarMaps">
-                                                                <ul class="nav nav-sm flex-column">
-                                                                    <li class="nav-item">
-                                                                        <a href="maps-google.html" class="nav-link" data-key="t-google">
-                                                                            Active
-                                                                        </a>
-                                                                    </li>
-                                                                    <li class="nav-item">
-                                                                        <a href="maps-vector.html" class="nav-link" data-key="t-vector">
-                                                                           Deactive
-                                                                        </a>
-                                                                    </li>
-                                                                  
-                                                                </ul>
+                                                            
+                                                            <ul class="dropdown-menu " aria-labelledby="dropdownMenuLink">
+                                                            <li><a class="dropdown-item"  href="pages-profile.html">View</a></li>
+                                                            <li>
+                                                                <a class="dropdown-item" href="#sidebarMaps" data-bs-toggle="collapse" role="button" aria-expanded="true" >
+                                                                    <span data-key="t-maps">Edit</span>
+                                                                </a>
+                                                                <div class=" simplebar-offset  menu-dropdown offset" id="sidebarMaps">
+                                                                    <ul class="  nav nav-sm flex-column">
+                                                                        <li class="nav-item">
+                                                                            <a href="maps-google.html" class="nav-link" data-key="t-google">
+                                                                                -Active
+                                                                            </a>
+                                                                        </li>
+                                                                        <li class="nav-item">
+                                                                            <a href="maps-vector.html" class="nav-link" data-key="t-vector">
+                                                                               -Deactive
+                                                                            </a>
+                                                                        </li>
+                                                                      
+                                                                    </ul>
+                                                                </div>
+                                                            </li>
+                                                            <li><a class="dropdown-item" href="#">Delete</a></li>
+                                                            </ul>
                                                             </div>
-                                                        </li>
-                                                        <li><a class="dropdown-item" href="#">Delete</a></li>
-                                                        </ul>
-                                                        </div>
-                                                        </td>
+                                                            </td>
                                                     
                                                     </tr>
                                                     <tr>
@@ -1017,37 +1037,37 @@
                                                         
                                                         <td><span class="badge badge-soft-success">Active</span></td>
                                                         <td>
-                                                        <div class="dropdown">
-                                                        <a href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
-                                                        <i class="ri-more-2-fill"></i>
-                                                        </a>
-                                                        
-                                                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                                                        <li><a class="dropdown-item"  href="pages-profile.html">View</a></li>
-                                                        <li class="nav-item">
-                                                            <a class="nav-link menu-link" href="#sidebarMaps" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarMaps">
-                                                                <span data-key="t-maps">Edit</span>
+                                                            <div class="dropdown">
+                                                            <a href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                                                            <i class="ri-more-2-fill"></i>
                                                             </a>
-                                                            <div class="collapse menu-dropdown" id="sidebarMaps">
-                                                                <ul class="nav nav-sm flex-column">
-                                                                    <li class="nav-item">
-                                                                        <a href="maps-google.html" class="nav-link" data-key="t-google">
-                                                                            Active
-                                                                        </a>
-                                                                    </li>
-                                                                    <li class="nav-item">
-                                                                        <a href="maps-vector.html" class="nav-link" data-key="t-vector">
-                                                                           Deactive
-                                                                        </a>
-                                                                    </li>
-                                                                  
-                                                                </ul>
+                                                            
+                                                            <ul class="dropdown-menu " aria-labelledby="dropdownMenuLink">
+                                                            <li><a class="dropdown-item"  href="pages-profile.html">View</a></li>
+                                                            <li>
+                                                                <a class="dropdown-item" href="#sidebarMaps" data-bs-toggle="collapse" role="button" aria-expanded="true" >
+                                                                    <span data-key="t-maps">Edit</span>
+                                                                </a>
+                                                                <div class=" simplebar-offset  menu-dropdown offset" id="sidebarMaps">
+                                                                    <ul class="  nav nav-sm flex-column">
+                                                                        <li class="nav-item">
+                                                                            <a href="maps-google.html" class="nav-link" data-key="t-google">
+                                                                                -Active
+                                                                            </a>
+                                                                        </li>
+                                                                        <li class="nav-item">
+                                                                            <a href="maps-vector.html" class="nav-link" data-key="t-vector">
+                                                                               -Deactive
+                                                                            </a>
+                                                                        </li>
+                                                                      
+                                                                    </ul>
+                                                                </div>
+                                                            </li>
+                                                            <li><a class="dropdown-item" href="#">Delete</a></li>
+                                                            </ul>
                                                             </div>
-                                                        </li>
-                                                        <li><a class="dropdown-item" href="#">Delete</a></li>
-                                                        </ul>
-                                                        </div>
-                                                        </td>
+                                                            </td>
                                                     
                                                     </tr>
                                                     <tr>
@@ -1064,37 +1084,37 @@
                                                         
                                                         <td><span class="badge badge-soft-success">Active</span></td>
                                                         <td>
-                                                        <div class="dropdown">
-                                                        <a href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
-                                                        <i class="ri-more-2-fill"></i>
-                                                        </a>
-                                                        
-                                                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                                                        <li><a class="dropdown-item"  href="pages-profile.html">View</a></li>
-                                                        <li class="nav-item">
-                                                            <a class="nav-link menu-link" href="#sidebarMaps" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarMaps">
-                                                                <span data-key="t-maps">Edit</span>
+                                                            <div class="dropdown">
+                                                            <a href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                                                            <i class="ri-more-2-fill"></i>
                                                             </a>
-                                                            <div class="collapse menu-dropdown" id="sidebarMaps">
-                                                                <ul class="nav nav-sm flex-column">
-                                                                    <li class="nav-item">
-                                                                        <a href="maps-google.html" class="nav-link" data-key="t-google">
-                                                                            Active
-                                                                        </a>
-                                                                    </li>
-                                                                    <li class="nav-item">
-                                                                        <a href="maps-vector.html" class="nav-link" data-key="t-vector">
-                                                                           Deactive
-                                                                        </a>
-                                                                    </li>
-                                                                  
-                                                                </ul>
+                                                            
+                                                            <ul class="dropdown-menu " aria-labelledby="dropdownMenuLink">
+                                                            <li><a class="dropdown-item"  href="pages-profile.html">View</a></li>
+                                                            <li>
+                                                                <a class="dropdown-item" href="#sidebarMaps" data-bs-toggle="collapse" role="button" aria-expanded="true" >
+                                                                    <span data-key="t-maps">Edit</span>
+                                                                </a>
+                                                                <div class=" simplebar-offset offcanvas menu-dropdown offset" id="sidebarMaps">
+                                                                    <ul class="  nav nav-sm flex-column">
+                                                                        <li class="nav-item">
+                                                                            <a href="maps-google.html" class="nav-link" data-key="t-google">
+                                                                                -Active
+                                                                            </a>
+                                                                        </li>
+                                                                        <li class="nav-item">
+                                                                            <a href="maps-vector.html" class="nav-link" data-key="t-vector">
+                                                                               -Deactive
+                                                                            </a>
+                                                                        </li>
+                                                                      
+                                                                    </ul>
+                                                                </div>
+                                                            </li>
+                                                            <li><a class="dropdown-item" href="#">Delete</a></li>
+                                                            </ul>
                                                             </div>
-                                                        </li>
-                                                        <li><a class="dropdown-item" href="#">Delete</a></li>
-                                                        </ul>
-                                                        </div>
-                                                        </td>
+                                                            </td>
                                                     
                                                     </tr>
                                                   
@@ -1382,21 +1402,20 @@
                 <!-- container-fluid -->
             </div>
             <!-- End Page-content -->
-
             <footer class="footer">
-                <div class="container-fluid">
+                <div class="container">
                     <div class="row">
-                        <div class="col-sm-6">
-                            <script>document.write(new Date().getFullYear())</script> © Velzon.
-                        </div>
-                        <div class="col-sm-6">
-                            <div class="text-sm-end d-none d-sm-block">
-                                Design & Develop by Themesbrand
+                        <div class="col-lg-12">
+                            <div class="text-center">
+                                <p class="mb-0 text-muted">&copy;
+                                    <script>document.write(new Date().getFullYear())</script>   Design & Developed by A2ZAlphabetsolutionz PVT Ltd.
+                                </p>
                             </div>
                         </div>
                     </div>
                 </div>
             </footer>
+            
         </div>
     </div>
     <!-- END layout-wrapper -->

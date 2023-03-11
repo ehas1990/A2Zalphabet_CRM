@@ -803,15 +803,35 @@
                         </li>
                         <li class="nav-item">
                             <a class="nav-link menu-link" href="usermanagement.html">
-                                <i class="ri-pulse-line"></i> <span data-key="t-widgets">Users Management</span>
+                                <i class="bx bx-user"></i> <span data-key="t-widgets">Users Management</span>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link menu-link" href="lead.html">
+                            <a class="nav-link menu-link" href="leadsmanagement.html">
                                 <i class="ri-pulse-line"></i> <span data-key="t-widgets">Leads Management</span>
                             </a>
                         </li>
-
+                        <li class="nav-item">
+                            <a href="#sidebarEmail" class="nav-link collapsed" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarEmail" data-key="t-email">
+                                <i class="bx bx-calendar"></i>Follow Up remainder
+                            </a>
+                            <div class="menu-dropdown collapse" id="sidebarEmail" style="">
+                            <ul class="nav nav-sm flex-column">
+                            <li class="nav-item">
+                            <a href="tomorrow.html" class="nav-link" data-key="t-mailbox"> Tomorrow Date </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="dayafter.html" class="nav-link" data-key="t-mailbox">Day After Tomorrow </a>
+                            </li>
+                           
+                            </ul>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link menu-link" href="helpcenter.html">
+                                <i class="lab las la-headset"></i> <span data-key="t-widgets">Help Center</span>
+                            </a>
+                        </li>
                     </ul>
                 </div>
                 <!-- Sidebar -->
@@ -1410,14 +1430,13 @@
             </div><!-- End Page-content -->
 
             <footer class="footer">
-                <div class="container-fluid">
+                <div class="container">
                     <div class="row">
-                        <div class="col-sm-6">
-                            <script>document.write(new Date().getFullYear())</script> © 
-                        </div>
-                        <div class="col-sm-6">
-                            <div class="text-sm-end d-none d-sm-block">
-                                Design & Develop by A2ZAlphabetsolutionz PVT Ltd.
+                        <div class="col-lg-12">
+                            <div class="text-center">
+                                <p class="mb-0 text-muted">&copy;
+                                    <script>document.write(new Date().getFullYear())</script>   Design & Developed by A2ZAlphabetsolutionz PVT Ltd.
+                                </p>
                             </div>
                         </div>
                     </div>
