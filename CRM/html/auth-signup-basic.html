@@ -64,130 +64,153 @@
                                 </div>
                                 <div class="p-2 mt-4">
                                     <form class="needs-validation" novalidate action="https://themesbrand.com/velzon/html/default/index.html">
-                                        <div class="mb-3">
-                                            <label for="username" class="form-label">Username <span class="text-danger">*</span></label>
-                                            <input type="text" class="form-control" id="username" placeholder="Enter username" required>
-                                            <div class="invalid-feedback">
-                                                Please enter  username
-                                            </div>
+                                        <div class="row">
+                                               <div class="col-lg-6">
+                                                       <div class="mb-3">
+                                                           <label for="username" class="form-label">Username <span class="text-danger">*</span></label>
+                                                           <input type="text" class="form-control" id="username" placeholder="Enter username" required>
+                                                           <div class="invalid-feedback">
+                                                           Please enter username
+                                                           </div>
+                                                       </div>
+                                               </div>
+                                               <div class="col-lg-6">
+                                                       <div class="mb-3">
+                                                           <label class="form-label" for="password-input">Password<span class="text-danger">*</span></label>
+                                                           <div class="position-relative auth-pass-inputgroup">
+                                                           <input type="password" class="form-control pe-5 password-input" onpaste="return false" placeholder="Enter password" id="password-input" aria-describedby="passwordInput" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required>
+                                                           <button class="btn btn-link position-absolute end-0 top-0 text-decoration-none text-muted password-addon" type="button" id="password-addon"><i class="ri-eye-fill align-middle"></i></button>
+                                                           <div class="invalid-feedback">
+                                                           Please enter password
+                                                           </div>
+                                                           </div>
+                                                       </div>
+                                               </div>
+                                        </div>   
+                                        <div class="row">
+                                               <div class="col-lg-6">
+                                                   <div class="mb-3">
+                                                       <label for="designation" class="form-label">User Type<span class="text-danger">*</span></label>
+                                                       <select class="form-control" id="designation" required>
+                                                       
+                                                       <option value="" selected="true" disabled="disabled">Select User Type </option>
+                                                       <option value="1">UserType 1</option>
+                                                       <option value="2">UserType 2</option>
+                                                       </select>
+                                                       <div class="invalid-feedback">
+                                                       please enter UserType
+                                                       </div>
+                                                   </div>
+                                               </div>
+                                               <div class="col-lg-6">
+                                                   <div class="mb-3">
+                                                       <label for="phone" class="form-label">Contact Number <span class="text-danger">*</span></label>
+                                                       <input type="text" class="form-control" id="Contact" placeholder="Enter Contact Number" required>
+                                                       <div class="invalid-feedback">
+                                                       Please enter Contact Number
+                                                       </div>
+                                                   </div>
+                                               </div>
                                         </div>
-                                        <div class="mb-3">
-                                            <label for="phone" class="form-label">Contact <span class="text-danger">*</span></label>
-                                            <input type="text" class="form-control" id="Contact" placeholder="Enter Contact" required>
-                                            <div class="invalid-feedback">
-                                                Please enter Contact
-                                            </div>
-                                        </div>
-                                        <div class="mb-3">
-                                            <label for="designation" class="form-label">Designation<span class="text-danger">*</span></label>
-                                            <select class="form-control" id="designation" required>
-                                              
-                                                <option value="" selected="true" disabled="disabled">Select Designation </option>
-                                                <option value="1">Designation 1</option>
-                                                <option value="2">Designation 2</option>
-                                            </select>
-                                            <div class="invalid-feedback">
-                                              please enter  Designation
+                                       
+                                       
+                                      
+                                       <div class="mb-3">
+                                       <label for="designation" class="form-label">Branch<span class="text-danger">*</span></label>
+                                       <select class="form-control" id="branch" required>
+                                       
+                                       <option value="" selected="true" disabled="disabled">Select Branches </option>
+                                       <option value="1"> Branch 1</option>
+                                       <option value="2">Branch 2</option>
+                                       </select>
+                                       <div class="invalid-feedback">
+                                       please enter Branch
+                                       </div>
+                                       
+                                       </div>
+                                       <div class="row">
+                                             <div class="col-lg-6">
+                                                   <div class="mb-3">
+                                                       <label for="photo" class="form-label">Photo</label>
+                                                       <input class="form-control" type="file" id="formFile" placeholder="Upload Photo">
+                                                       
+                                                       
+                                                   </div>
                                              </div>
-                                            
-                                        </div>
-                                        <div class="mb-3">
-                                            <label for="designation" class="form-label">Branch<span class="text-danger">*</span></label>
-                                            <select class="form-control" id="branch" required>
-                                              
-                                                <option value="" selected="true" disabled="disabled">Select Branches </option>
-                                                <option value="1"> Branch 1</option>
-                                                <option value="2">Branch 2</option>
-                                            </select>
-                                            <div class="invalid-feedback">
-                                                please enter  Branch
+                                             <div class="col-lg-6">
+                                               <div class="mb-3">
+                                                   <label for="cover" class="form-label">Upload Cover Photo</label>
+                                                   <input class="form-control" type="file" id="formFile" placeholder="Upload Photo">
+                                                   
+                                                   
+                                                   </div>
                                              </div>
-                                            
-                                        </div>
-                                        <div class="mb-3">
-                                            <label for="designation" class="form-label">Photo</label>
-                                            <input class="form-control" type="file" id="formFile" placeholder="Upload Photo">
-                                            
-                                            
-                                        </div>
-                                        <div class="mb-3">
-                                            <label for="designation" class="form-label">Upload Cover Photo(890px X 260px size)</label>
-                                            <input class="form-control" type="file" id="formFile" placeholder="Upload Cover Photo">
-                                            
-                                            
-                                        </div>
-                                        <div class="mb-3">
-                                            <label for="useremail" class="form-label">Email <span class="text-danger">*</span></label>
-                                            <input type="email" class="form-control" id="useremail" placeholder="Enter email address" required>
-                                            <div class="invalid-feedback">
-                                                Please enter email
-                                            </div>
-                                        </div>
-                                        
-
-                                        <div class="mb-3">
-                                            <label class="form-label" for="password-input">Password<span class="text-danger">*</span></label>
-                                            <div class="position-relative auth-pass-inputgroup">
-                                                <input type="password" class="form-control pe-5 password-input" onpaste="return false" placeholder="Enter password" id="password-input" aria-describedby="passwordInput" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required>
-                                                <button class="btn btn-link position-absolute end-0 top-0 text-decoration-none text-muted password-addon" type="button" id="password-addon"><i class="ri-eye-fill align-middle"></i></button>
-                                                <div class="invalid-feedback">
-                                                    Please enter password
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="mb-3">
-                                            <label class="form-label" for="visiblity">visiblity<span class="text-danger">*</span></label>
-                                            <div class="position-relative ">
-                                                <input type="radio"  class="form-check-input" id="radio1" name="optradio" value="Public" checked required="required"><span class="ms-2"> Public</span>
-                                                <input type="radio"  class="form-check-input ms-3" id="radio2" name="optradio" value="Private" checked required="required"><span class="ms-2">Private</span>
-                                            </div>
-                                            <div class="invalid-feedback">
-                                                Please enter password
-                                            </div>
-                                        </div>
-                                        <div class="mb-3">
-                                            <label class="form-label" for="visiblity">Employee Type<span class="text-danger">*</span></label>
-                                            <div class="position-relative">
-                                                <input type="radio"  class="form-check-input"  id="radio1" name="optradio" value="Global" checked required="required"><span class="ms-2"> Global</span>
-                                                <input type="radio"  class="form-check-input ms-3"  id="radio2" name="optradio" value="Local" checked required="required"><span class="ms-2"> Local</span>
-                                            </div>
-                                        </div>
-                                        <div class="mb-3">
-                                            <label class="form-label" for="address">Address<span class="text-danger">*</span></label>
-                                            <textarea class="form-control" id="address" required></textarea>
-                                            <div class="invalid-feedback">
-                                                Please enter address
-                                            </div>
-                                        </div>
-                                      <!--  <div class="mb-4">
-                                            <p class="mb-0 fs-12 text-muted fst-italic">By registering you agree to the A2zAlphabetsolutionz <a href="#" class="text-primary text-decoration-underline fst-normal fw-medium">Terms of Use</a></p>
-                                        </div> -->
-
-                                        <div id="password-contain" class="p-3 bg-light mb-2 rounded">
-                                            <h5 class="fs-13">Password must contain:</h5>
-                                            <p id="pass-length" class="invalid fs-12 mb-2">Minimum <b>8 characters</b></p>
-                                            <p id="pass-lower" class="invalid fs-12 mb-2">At <b>lowercase</b> letter (a-z)</p>
-                                            <p id="pass-upper" class="invalid fs-12 mb-2">At least <b>uppercase</b> letter (A-Z)</p>
-                                            <p id="pass-number" class="invalid fs-12 mb-0">A least <b>number</b> (0-9)</p>
-                                        </div>
-
-                                        <div class="mt-4">
-                                            <button class="btn btn-success w-100" type="submit">Sign Up</button>
-                                        </div>
-
-                                    <!--   <div class="mt-4 text-center">
-                                            <div class="signin-other-title">
-                                                <h5 class="fs-13 mb-4 title text-muted">Create account with</h5>
-                                            </div>
-
-                                            <div>
-                                                <button type="button" class="btn btn-primary btn-icon waves-effect waves-light"><i class="ri-facebook-fill fs-16"></i></button>
-                                                <button type="button" class="btn btn-danger btn-icon waves-effect waves-light"><i class="ri-google-fill fs-16"></i></button>
-                                                <button type="button" class="btn btn-dark btn-icon waves-effect waves-light"><i class="ri-github-fill fs-16"></i></button>
-                                                <button type="button" class="btn btn-info btn-icon waves-effect waves-light"><i class="ri-twitter-fill fs-16"></i></button>
-                                            </div>
-                                        </div> -->
-                                    </form>
+                                       </div>
+                                       
+                                       
+                                       <div class="mb-3">
+                                       <label for="useremail" class="form-label">Email <span class="text-danger">*</span></label>
+                                       <input type="email" class="form-control" id="useremail" placeholder="Enter email address" required>
+                                       <div class="invalid-feedback">
+                                       Please enter email
+                                       </div>
+                                       </div>
+                                       
+                                       
+                                      
+                                       <div class="mb-3">
+                                       <label class="form-label" for="visiblity">Visiblity<span class="text-danger">*</span></label>
+                                       <div class="position-relative ">
+                                       <input type="radio" class="form-check-input me-3" id="radio1" name="optradio" value="option1" checked required="required"><span class="me-2">Public</span>
+                                       <input type="radio" class="form-check-input me-3" id="radio1" name="optradio" value="option1" checked required="required"><span class="me-2">Private</span>
+                                       </div>
+                                       <div class="invalid-feedback">
+                                       Please enter password
+                                       </div>
+                                       </div>
+                                       <div class="mb-3">
+                                       <label class="form-label" for="visiblity">Employee Type<span class="text-danger">*</span></label>
+                                       <div class="position-relative">
+                                       <input type="radio" class="form-check-input" id="radio1" name="optradio" value="option1" checked required="required" ><span class="ms-2"> Global</span>
+                                       <input type="radio" class="form-check-input ms-3" id="radio1" name="optradio" value="option1" checked required="required"><span class="ms-2"> Local</span>
+                                       </div>
+                                       </div>
+                                       <div class="mb-3">
+                                       <label class="form-label" for="address">Address<span class="text-danger">*</span></label>
+                                       <textarea class="form-control" id="address" required></textarea>
+                                       <div class="invalid-feedback">
+                                       Please enter address
+                                       </div>
+                                       </div>
+                                       <!-- <div class="mb-4">
+                                       <p class="mb-0 fs-12 text-muted fst-italic">By registering you agree to the A2zAlphabetsolutionz <a href="#" class="text-primary text-decoration-underline fst-normal fw-medium">Terms of Use</a></p>
+                                       </div> -->
+                                       
+                                       <div id="password-contain" class="p-3 bg-light mb-2 rounded">
+                                       <h5 class="fs-13">Password must contain:</h5>
+                                       <p id="pass-length" class="invalid fs-12 mb-2">Minimum <b>8 characters</b></p>
+                                       <p id="pass-lower" class="invalid fs-12 mb-2">At <b>lowercase</b> letter (a-z)</p>
+                                       <p id="pass-upper" class="invalid fs-12 mb-2">At least <b>uppercase</b> letter (A-Z)</p>
+                                       <p id="pass-number" class="invalid fs-12 mb-0">A least <b>number</b> (0-9)</p>
+                                       </div>
+                                       
+                                       <div class="mt-4">
+                                       <button class="btn btn-success w-100" type="submit">Sign Up</button>
+                                       </div>
+                                       
+                                       <!-- <div class="mt-4 text-center">
+                                       <div class="signin-other-title">
+                                       <h5 class="fs-13 mb-4 title text-muted">Create account with</h5>
+                                       </div>
+                                       
+                                       <div>
+                                       <button type="button" class="btn btn-primary btn-icon waves-effect waves-light"><i class="ri-facebook-fill fs-16"></i></button>
+                                       <button type="button" class="btn btn-danger btn-icon waves-effect waves-light"><i class="ri-google-fill fs-16"></i></button>
+                                       <button type="button" class="btn btn-dark btn-icon waves-effect waves-light"><i class="ri-github-fill fs-16"></i></button>
+                                       <button type="button" class="btn btn-info btn-icon waves-effect waves-light"><i class="ri-twitter-fill fs-16"></i></button>
+                                       </div>
+                                       </div> -->
+                                       </form>
 
                                 </div>
                             </div>

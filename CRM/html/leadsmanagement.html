@@ -816,6 +816,11 @@
                             </a>
                         </li>
                         <li class="nav-item">
+                            <a class="nav-link menu-link" href="followup.html">
+                                <i class="bx bx bx-calendar"></i> <span data-key="t-widgets">Follow Up Remainder</span>
+                            </a>
+                        </li>
+                       <!--<li class="nav-item">
                             <a href="#sidebarEmail" class="nav-link collapsed" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarEmail" data-key="t-email">
                                 <i class="bx bx-calendar"></i>Follow Up remainder
                             </a>
@@ -830,7 +835,7 @@
                            
                             </ul>
                             </div>
-                        </li>
+                        </li>-->
                         <li class="nav-item">
                             <a class="nav-link menu-link" href="helpcenter.html">
                                 <i class="lab las la-headset"></i> <span data-key="t-widgets">Help Center</span>
@@ -1201,165 +1206,186 @@
                                                 </div>
                                                 <div class="p-3">
                                                     <form class="needs-validation" novalidate="" action="https://themesbrand.com/velzon/html/default/index.html">
+                                                        <div class="row">
+                                                               <div class="col-lg-6">
+                                                                    <div class="mb-3">
+                                                                        <label for="photo"  class="form-label text-muted">Business Name</label>
+                                                                        <input class="form-control" type="text" id="Business Name" placeholder="Enter Business Name">
+                                                                        
+                                                                        
+                                                                    </div>
+                                                               </div>
+                                                               <div class="col-lg-6">
+                                                                    <div class="mb-3">
+                                                                        <label for="autoCompleteFruit"  class="form-label text-muted">Business Catagories</label>
+                                                                        <select class="form-control" id="Leads Catagories" required="">
+                                                                        
+                                                                        <option value="" selected="true" disabled="disabled">Select Business Catagories </option>
+                                                                        
+                                                                        <option value="SEO"> SEO</option>
+                                                                        <option value="Website">Website</option>
+                                                                        <option value="Software Developer"> Software Developer</option>
+                                                                        </select>
+                                                                        <div class="invalid-feedback">
+                                                                        Select Leads Catagories
+                                                                        </div>
+                                                                   </div>
+                                                                </div>
+                                                        </div>
+                                                        <div class="row">
+                                                               <div class="col-lg-6">
+                                                                  <div class="mb-3">
+                                                                        <label for="title"  class="form-label text-muted">Contact Person Name <span class="text-danger">*</span></label>
+                                                                        <input type="text" class="form-control" id="person name" placeholder="Enter Contact Person Name" required="">
+                                                                        <div class="invalid-feedback">
+                                                                        Please enter Contact Person Name
+                                                                        </div>
+                                                                    </div>
+                                                               </div>
+                                                               <div class="col-lg-6">
+                                                                   <div class="mb-3">
+                                                                        <label for="phone"  class="form-label text-muted">Contact Person Phone<span class="text-danger">*</span></label>
+                                                                        <input type="text" class="form-control" id="Contact" placeholder="Enter Contact Person Phone" required="">
+                                                                        <div class="invalid-feedback">
+                                                                        Please enter Contact Person Phone
+                                                                        </div>
+                                                                    </div>
+                                                               </div>
+                                                        </div>
+                                                        <div class="row">
+                                                               <div class="col-lg-6">
+                                                                        <div class="mb-3">
+                                                                            <label for="designation" class="form-label text-muted">Contact Person Designation<span class="text-danger">*</span></label>
+                                                                            <select class="form-control" id="designation" required="">
+                                                                            
+                                                                            <option value="" selected="true" disabled="disabled">Select Designation </option>
+                                                                            <option value="1">Designation 1</option>
+                                                                            <option value="2">Designation 2</option>
+                                                                            </select>
+                                                                            <div class="invalid-feedback">
+                                                                            select Contact Person Designation
+                                                                            </div>
+                                                                            
+                                                                        </div>
+                                                               </div>
+                                                               <div class="col-lg-6">
+                                                                    <div class="mb-3">
+                                                                        <label for="designation" class="form-label text-muted">Intrest Rate<span class="text-danger">*</span></label>
+                                                                        <select class="form-control" id="branch" required="">
+                                                                        
+                                                                        <option value="" selected="true" disabled="disabled">Select Rate </option>
+                                                                        <option value="1"> 1</option>
+                                                                        <option value="2"> 2</option>
+                                                                        <option value="3"> 3</option>
+                                                                        <option value="4"> 4</option>
+                                                                        <option value="5"> 5</option>
+                                                                        </select>
+                                                                        <div class="invalid-feedback">
+                                                                        Select Intrest Rate
+                                                                        </div>
+                                                                        
+                                                                    </div>
+                                                               </div>
+
+                                                        </div>
+                                                        <div class="row">
+                                                              <div class="col-lg-6">
+                                                                <div class="mb-3">
+                                                                    <label for="title"  class="form-label text-muted">Business Person Name <span class="text-danger">*</span></label>
+                                                                    <input type="text" class="form-control" id="person name" placeholder="Enter Business Person Name" required="">
+                                                                    <div class="invalid-feedback">
+                                                                    Please enter Business Person Name
+                                                                    </div>
+                                                                </div>
+                                                              </div>
+                                                              <div class="col-lg-6">
+                                                                <div class="mb-3">
+                                                                    <label for="phone"  class="form-label text-muted">Business Person Phone<span class="text-danger">*</span></label>
+                                                                    <input type="text" class="form-control" id="Contact" placeholder="Enter Business Person Phone" required="">
+                                                                    <div class="invalid-feedback">
+                                                                    Please enter Business Person Phone
+                                                                    </div>
+                                                                </div>
+                                                              </div>
+                                                        </div>
                                                         <div class="mb-3">
-                                                        <label for="title" class="form-label">Lead Title <span class="text-danger">*</span></label>
-                                                        <input type="text" class="form-control" id="lead" placeholder="Enter Lead Title" required="">
-                                                        <div class="invalid-feedback">
-                                                        Please enter Lead Title
+                                                            <label  class="form-label text-muted" for="address">Business Address<span class="text-danger">*</span></label>
+                                                            <textarea class="form-control" id="address" required=""></textarea>
+                                                            <div class="invalid-feedback">
+                                                            Please enter Business Address
+                                                            </div>
                                                         </div>
-                                                        </div>
-                                                        <div class="mb-3">
-                                                        <label for="Description" class="form-label">Leads Description <span class="text-danger">*</span></label>
-                                                        <textarea class="form-control"></textarea>
-                                                        <div class="invalid-feedback">
-                                                        Please enter Leads Description
-                                                        </div>
-                                                        </div>
-                                                        <div class="mb-3">
-                                                        <label for="title" class="form-label">Contact Person Name <span class="text-danger">*</span></label>
-                                                        <input type="text" class="form-control" id="person name" placeholder="Enter Lead Title" required="">
-                                                        <div class="invalid-feedback">
-                                                        Please enter Contact Person Name
-                                                        </div>
-                                                        </div>
-                                                        <div class="mb-3">
-                                                        <label for="phone" class="form-label">Contact Person Phone<span class="text-danger">*</span></label>
-                                                        <input type="text" class="form-control" id="Contact" placeholder="Enter Contact Person Phone" required="">
-                                                        <div class="invalid-feedback">
-                                                        Please enter Contact Person Phone
-                                                        </div>
-                                                        </div>
-                                                        
-                                                        <div class="mb-3">
-                                                        <label for="designation" class="form-label">Contact Person Designation<span class="text-danger">*</span></label>
-                                                        <select class="form-control" id="designation" required="">
-                                                        
-                                                        <option value="" selected="true" disabled="disabled">Select Designation </option>
-                                                        <option value="1">Designation 1</option>
-                                                        <option value="2">Designation 2</option>
-                                                        </select>
-                                                        <div class="invalid-feedback">
-                                                        select Contact Person Designation
-                                                        </div>
-                                                        
+                                                        <div class="row">
+                                                               <div class="col-lg-6">
+                                                                    <div class="mb-3">
+                                                                        <label for="title"  class="form-label text-muted">Lead Title <span class="text-danger">*</span></label>
+                                                                        <input type="text" class="form-control" id="lead" placeholder="Enter Lead Title" required="">
+                                                                        <div class="invalid-feedback">
+                                                                        Please enter Lead Title
+                                                                        </div>
+                                                                    </div>
+                                                               </div>
+                                                               <div class="col-lg-6">
+                                                                        <label for="autoCompleteCars"  class="form-label text-muted">Lead Status<span class="text-danger">*</span></label>
+                                                                        <select class="form-control" id="Status" required="">
+                                                                        
+                                                                        <option value="" selected="true" disabled="disabled">Select Rate </option>
+                                                                        <option value="open"> OPen</option>
+                                                                        <option value="Running"> Running</option>
+                                                                        <option value="Fresh"> Fresh</option>
+                                                                        </select>
+                                                                        <div class="invalid-feedback">
+                                                                        Select status
+                                                                        </div>
+                                                               </div>
                                                         </div>
                                                         <div class="mb-3">
-                                                        <label class="form-label" for="address">Address<span class="text-danger">*</span></label>
-                                                        <textarea class="form-control" id="address" required=""></textarea>
-                                                        <div class="invalid-feedback">
-                                                        Please enter address
+                                                            <label for="Description"  class="form-label text-muted">Leads Description <span class="text-danger">*</span></label>
+                                                            <textarea class="form-control"></textarea>
+                                                            <div class="invalid-feedback">
+                                                            Please enter Leads Description
+                                                            </div>
                                                         </div>
-                                                        </div>
-                                                        <div class="mb-3">
-                                                        <label for="designation" class="form-label">Intrest Rate<span class="text-danger">*</span></label>
-                                                        <select class="form-control" id="branch" required="">
-                                                        
-                                                        <option value="" selected="true" disabled="disabled">Select Rate </option>
-                                                        <option value="1"> 1</option>
-                                                        <option value="2"> 2</option>
-                                                        <option value="3"> 3</option>
-                                                        <option value="4"> 4</option>
-                                                        <option value="5"> 5</option>
-                                                        </select>
-                                                        <div class="invalid-feedback">
-                                                        Select Intrest Rate
-                                                        </div>
-                                                        
-                                                        </div>
-                                                        <div>
                                                         <div class="row mb-3">
-                                                        <div class="col-lg-6">
-                                                        <div>
-                                                        <label for="autoCompleteFruit" class="text-muted">Lead generated Date</label>
-                                                        <input type="date" class="form-control" id=" generated Date" required="">
-                                                        <div class="invalid-feedback">
-                                                        Please enter Lead generated Date
-                                                        </div>
-                                                        </div>
-                                                        </div>
-                                                        <!-- end col -->
-                                                        <div class="col-lg-6">
-                                                        <div>
-                                                        <label for="autoCompleteCars" class="text-muted">Next Follow Up Date</label>
-                                                        <input type="date" class="form-control" id="Follow Up Date" required="">
-                                                        <div class="invalid-feedback">
-                                                        Please enter Follow Up Date
-                                                        </div>
-                                                        </div>
-                                                        </div>
-                                                        <!-- end col -->
+                                                            <div class="col-lg-6">
+                                                                    <label for="autoCompleteFruit" class="form-label text-muted">Lead generated Date</label>
+                                                                    <input type="date" class="form-control" id=" generated Date" required="">
+                                                                    <div class="invalid-feedback">
+                                                                    Please enter Lead generated Date
+                                                                    </div>
+                                                            
+                                                            </div>
+                                                       
+                                                            <div class="col-lg-6">
+                                                                    <label for="autoCompleteCars"  class="form-label text-muted">Next Follow Up Date</label>
+                                                                    <input type="date" class="form-control" id="Follow Up Date" required="">
+                                                                    <div class="invalid-feedback">
+                                                                    Please enter Follow Up Date
+                                                                    </div>
+                                                            </div>
+                                                       
                                                         </div>
                                                         <!-- end row -->
                                                         <div class="row mb-3">
-                                                        <div class="col-lg-6">
-                                                        <div>
-                                                        <label for="autoCompleteFruit" class="text-muted">Min Price</label>
-                                                        <input type="number" class="form-control" id="Min Price" required="">
-                                                        <div class="invalid-feedback">
-                                                        Please enter Min Price
-                                                        </div>
-                                                        </div>
-                                                        </div>
-                                                        <!-- end col -->
-                                                        <div class="col-lg-6">
-                                                        <div>
-                                                        <label for="autoCompleteCars" class="text-muted">Max Price<span class="text-danger">*</span></label>
-                                                        <input type="number" class="form-control" id="Max Price" required="">
-                                                        <div class="invalid-feedback">
-                                                        Please enter Max Price
-                                                        </div>
-                                                        </div>
-                                                        </div>
+                                                            <div class="col-lg-6">   
+                                                                <label for="autoCompleteFruit"  class="form-label text-muted">Min Price</label>
+                                                                <input type="number" class="form-control" id="Min Price" required="">
+                                                                <div class="invalid-feedback">
+                                                                Please enter Min Price
+                                                                </div>  
+                                                            </div>
+                                                             <div class="col-lg-6">
+                                                                   
+                                                                    <label for="autoCompleteCars"  class="form-label text-muted">Max Price<span class="text-danger">*</span></label>
+                                                                    <input type="number" class="form-control" id="Max Price" required="">
+                                                                    <div class="invalid-feedback">
+                                                                    Please enter Max Price
+                                                                    </div>
+                                                                    
+                                                            </div>
                                                         <!-- end col -->
                                                         </div>
                                                         <!-- end row -->
-                                                        </div>
-                                                        <div class="mb-3">
-                                                        <label for="photo" class="form-label">Business Name</label>
-                                                        <input class="form-control" type="text" id="Business Name" placeholder="Enter Business Name">
-                                                        
-                                                        
-                                                        </div>
-                                                        <div class="row mb-3">
-                                                        <div class="col-lg-6">
-                                                        <div>
-                                                        <label for="autoCompleteFruit" class="text-muted">Leads Catagories</label>
-                                                        <select class="form-control" id="Leads Catagories" required="">
-                                                        
-                                                        <option value="" selected="true" disabled="disabled">Select Leads Catagories </option>
-                                                        
-                                                        <option value="SEO"> SEO</option>
-                                                        <option value="Website">Website</option>
-                                                        <option value="Software Developer"> Software Developer</option>
-                                                        </select>
-                                                        <div class="invalid-feedback">
-                                                        Select Leads Catagories
-                                                        </div>
-                                                        </div>
-                                                        </div>
-                                                        <!-- end col -->
-                                                        <div class="col-lg-6">
-                                                        <div>
-                                                        <label for="autoCompleteCars" class="text-muted">Lead Status<span class="text-danger">*</span></label>
-                                                        <select class="form-control" id="Status" required="">
-                                                        
-                                                        <option value="" selected="true" disabled="disabled">Select Rate </option>
-                                                        <option value="open"> OPen</option>
-                                                        <option value="Running"> Running</option>
-                                                        <option value="Fresh"> Fresh</option>
-                                                        </select>
-                                                        <div class="invalid-feedback">
-                                                        Select status
-                                                        </div>
-                                                        </div>
-                                                        </div>
-                                                        <!-- end col -->
-                                                        </div>
-                                                        
-                                                        
-                                                        
-                                                        
-                                                        
                                                         <div id="password-contain" class="p-3 bg-light mb-2 rounded">
                                                         <h5 class="fs-13">Password must contain:</h5>
                                                         <p id="pass-length" class="invalid fs-12 mb-2">Minimum <b>8 characters</b></p>
@@ -1487,7 +1513,7 @@
                                                                     <option value="open">open</option>
                                                                     <option value="Running">Running</option>
                                                                     
-                                                            </select>
+                                                            </select`>
                                                         </div>
                                                         
                                                         <div class="col-lg">

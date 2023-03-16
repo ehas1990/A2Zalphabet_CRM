@@ -817,10 +817,15 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="#sidebarEmail" class="nav-link menu-link collapsed" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarEmail" data-key="t-email">
-                                <i class="bx bx-calendar"></i><span data-key="t-widgets">Follow Up remainder </span>
+                            <a class="nav-link menu-link" href="followup.html">
+                                <i class="bx bx bx-calendar"></i> <span data-key="t-widgets">Follow Up Remainder</span>
                             </a>
-                            <div class="menu-dropdown collapse" id="sidebarEmail" >
+                        </li>
+                       <!--<li class="nav-item">
+                            <a href="#sidebarEmail" class="nav-link collapsed" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarEmail" data-key="t-email">
+                                <i class="bx bx-calendar"></i>Follow Up remainder
+                            </a>
+                            <div class="menu-dropdown collapse" id="sidebarEmail" style="">
                             <ul class="nav nav-sm flex-column">
                             <li class="nav-item">
                             <a href="tomorrow.html" class="nav-link" data-key="t-mailbox"> Tomorrow Date </a>
@@ -831,7 +836,7 @@
                            
                             </ul>
                             </div>
-                        </li>
+                        </li>-->
                         <li class="nav-item">
                             <a class="nav-link menu-link" href="helpcenter.html">
                                 <i class="lab las la-headset"></i> <span data-key="t-widgets">Help Center</span>
@@ -1190,33 +1195,57 @@
                                             </div>
                                             <div class="p-2 mt-4">
                                             <form class="needs-validation" novalidate action="https://themesbrand.com/velzon/html/default/index.html">
-                                            <div class="mb-3">
-                                            <label for="username" class="form-label">Username <span class="text-danger">*</span></label>
-                                            <input type="text" class="form-control" id="username" placeholder="Enter username" required>
-                                            <div class="invalid-feedback">
-                                            Please enter username
-                                            </div>
-                                            </div>
-                                            <div class="mb-3">
-                                            <label for="phone" class="form-label">Contact <span class="text-danger">*</span></label>
-                                            <input type="text" class="form-control" id="Contact" placeholder="Enter Contact" required>
-                                            <div class="invalid-feedback">
-                                            Please enter Contact
-                                            </div>
-                                            </div>
-                                            <div class="mb-3">
-                                            <label for="designation" class="form-label">Designation<span class="text-danger">*</span></label>
-                                            <select class="form-control" id="designation" required>
+                                             <div class="row">
+                                                    <div class="col-lg-6">
+                                                            <div class="mb-3">
+                                                                <label for="username" class="form-label">Username <span class="text-danger">*</span></label>
+                                                                <input type="text" class="form-control" id="username" placeholder="Enter username" required>
+                                                                <div class="invalid-feedback">
+                                                                Please enter username
+                                                                </div>
+                                                            </div>
+                                                    </div>
+                                                    <div class="col-lg-6">
+                                                            <div class="mb-3">
+                                                                <label class="form-label" for="password-input">Password<span class="text-danger">*</span></label>
+                                                                <div class="position-relative auth-pass-inputgroup">
+                                                                <input type="password" class="form-control pe-5 password-input" onpaste="return false" placeholder="Enter password" id="password-input" aria-describedby="passwordInput" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required>
+                                                                <button class="btn btn-link position-absolute end-0 top-0 text-decoration-none text-muted password-addon" type="button" id="password-addon"><i class="ri-eye-fill align-middle"></i></button>
+                                                                <div class="invalid-feedback">
+                                                                Please enter password
+                                                                </div>
+                                                                </div>
+                                                            </div>
+                                                    </div>
+                                             </div>   
+                                             <div class="row">
+                                                    <div class="col-lg-6">
+                                                        <div class="mb-3">
+                                                            <label for="designation" class="form-label">User Type<span class="text-danger">*</span></label>
+                                                            <select class="form-control" id="designation" required>
+                                                            
+                                                            <option value="" selected="true" disabled="disabled">Select User Type </option>
+                                                            <option value="1">UserType 1</option>
+                                                            <option value="2">UserType 2</option>
+                                                            </select>
+                                                            <div class="invalid-feedback">
+                                                            please enter UserType
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-6">
+                                                        <div class="mb-3">
+                                                            <label for="phone" class="form-label">Contact Number <span class="text-danger">*</span></label>
+                                                            <input type="text" class="form-control" id="Contact" placeholder="Enter Contact Number" required>
+                                                            <div class="invalid-feedback">
+                                                            Please enter Contact Number
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                             </div>
                                             
-                                            <option value="" selected="true" disabled="disabled">Select Designation </option>
-                                            <option value="1">Designation 1</option>
-                                            <option value="2">Designation 2</option>
-                                            </select>
-                                            <div class="invalid-feedback">
-                                            please enter Designation
-                                            </div>
                                             
-                                            </div>
+                                           
                                             <div class="mb-3">
                                             <label for="designation" class="form-label">Branch<span class="text-danger">*</span></label>
                                             <select class="form-control" id="branch" required>
@@ -1230,18 +1259,26 @@
                                             </div>
                                             
                                             </div>
-                                            <div class="mb-3">
-                                            <label for="photo" class="form-label">Photo</label>
-                                            <input class="form-control" type="file" id="formFile" placeholder="Upload Photo">
-                                            
-                                            
+                                            <div class="row">
+                                                  <div class="col-lg-6">
+                                                        <div class="mb-3">
+                                                            <label for="photo" class="form-label">Photo</label>
+                                                            <input class="form-control" type="file" id="formFile" placeholder="Upload Photo">
+                                                            
+                                                            
+                                                        </div>
+                                                  </div>
+                                                  <div class="col-lg-6">
+                                                    <div class="mb-3">
+                                                        <label for="cover" class="form-label">Upload Cover Photo</label>
+                                                        <input class="form-control" type="file" id="formFile" placeholder="Upload Photo">
+                                                        
+                                                        
+                                                        </div>
+                                                  </div>
                                             </div>
-                                            <div class="mb-3">
-                                            <label for="cover" class="form-label">Upload Cover Photo(890px X 260px size)</label>
-                                            <input class="form-control" type="file" id="formFile" placeholder="Upload Photo">
                                             
                                             
-                                            </div>
                                             <div class="mb-3">
                                             <label for="useremail" class="form-label">Email <span class="text-danger">*</span></label>
                                             <input type="email" class="form-control" id="useremail" placeholder="Enter email address" required>
@@ -1251,16 +1288,7 @@
                                             </div>
                                             
                                             
-                                            <div class="mb-3">
-                                            <label class="form-label" for="password-input">Password<span class="text-danger">*</span></label>
-                                            <div class="position-relative auth-pass-inputgroup">
-                                            <input type="password" class="form-control pe-5 password-input" onpaste="return false" placeholder="Enter password" id="password-input" aria-describedby="passwordInput" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required>
-                                            <button class="btn btn-link position-absolute end-0 top-0 text-decoration-none text-muted password-addon" type="button" id="password-addon"><i class="ri-eye-fill align-middle"></i></button>
-                                            <div class="invalid-feedback">
-                                            Please enter password
-                                            </div>
-                                            </div>
-                                            </div>
+                                           
                                             <div class="mb-3">
                                             <label class="form-label" for="visiblity">Visiblity<span class="text-danger">*</span></label>
                                             <div class="position-relative ">
