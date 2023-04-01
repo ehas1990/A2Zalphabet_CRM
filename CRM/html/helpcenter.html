@@ -882,8 +882,8 @@
 
                   
                     <!--end row-->
-                    <div class="row justify-content-center">
-                        <div class="col-lg-8">
+                    <div class="row">
+                        <div class="col-lg-12">
                             <div class="card" id="leadsList">
                                 <div class="card-header border-0">
 
@@ -894,7 +894,25 @@
                                                 <i class="ri-search-line search-icon"></i>
                                             </div>
                                         </div>
-                                     
+                                      <div class="col-sm-auto ms-auto">
+                                            <div class="hstack gap-2">
+                                                <button class="btn btn-soft-danger" id="remove-actions" onClick="deleteMultiple()"><i class="ri-delete-bin-2-line"></i></button>
+                                            
+                                                <button type="button" class="btn btn-success add-btn" data-bs-toggle="modal" id="create-btn" data-bs-target="#showModal"><i class="ri-add-line align-bottom me-1"></i> Add Leads</button>
+                                               <!-- <span class="dropdown">
+                                                    <button class="btn btn-soft-info btn-icon fs-14" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                                                        <i class="ri-settings-4-line"></i>
+                                                    </button>
+                                                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                                        <li><a class="dropdown-item" href="#">Copy</a></li>
+                                                        <li><a class="dropdown-item" href="#">Move to pipline</a></li>
+                                                        <li><a class="dropdown-item" href="#">Add to exceptions</a></li>
+                                                        <li><a class="dropdown-item" href="#">Switch to common form view</a></li>
+                                                        <li><a class="dropdown-item" href="#">Reset form view to default</a></li>
+                                                    </ul>
+                                                </span>-->
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="card-body">
@@ -908,12 +926,11 @@
                                                                 <input class="form-check-input" type="checkbox" id="checkAll" value="option">
                                                             </div>
                                                         </th>
-
-                                                        <th class="sort" data-sort="Requested">Requested By Field Excutive</th>
+                                                        <th class="sort" data-sort="name">Requested By Field Excutive</th>
+                                                        <th class="sort" data-sort="company_name">Lead Title</th>
+                                                        <th class="sort" data-sort="leads_score">Description</th>
+                                                        <th class="sort" data-sort="phone">Action</th>
                                                         
-                                                        <th class="sort" data-sort="Lead Title">Lead Title</th>
-                                                        <th class="sort" data-sort="Description">Description</th>
-                                                        <th class="sort" data-sort="Action">Action</th>
                                                        
                                                     </tr>
                                                 </thead>
@@ -926,12 +943,43 @@
                                                         </th>
                                                         <td class="id" style="display:none;"><a href="javascript:void(0);" class="fw-medium link-primary">#VZ2101</a></td>
                                                       
-                                                        <td class="Requested">Midhun lal</td>
+                                                        <td class="name">Midhun Lal</td>
+                        
+                                                        <td class="company_name">Technopark</td>
                                                         
-                                                        <td class="Lead Title">Digital Marketing</td>
-                                                        <td class="Description">Description text</td>
-                                                        <th class="Action"><a class="nav-link" href="helpcenteroptn.html"><i class="ri-task-fill ri-md"></i></a></th>
-                                                       
+                                                        <td class="leads_score"><span class="badge badge-soft-success">Active</span></td>
+                                                        <td >
+                                                        <div class="dropdown">
+                                                        <a href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                                                        <i class="ri-more-2-fill"></i>
+                                                        </a>
+                                                        
+                                                        <ul class="dropdown-menu " aria-labelledby="dropdownMenuLink">
+                                                        <li><a class="dropdown-item"  href="pages-profile.html">View</a></li>
+                                                        <li>
+                                                            <a class="dropdown-item" href="#sidebarMaps" data-bs-toggle="collapse" role="button" aria-expanded="true" >
+                                                                <span data-key="t-maps">Edit</span>
+                                                            </a>
+                                                            <div class=" simplebar-offset menu-dropdown offset" id="sidebarMaps">
+                                                                <ul class="  nav nav-sm flex-column">
+                                                                    <li class="nav-item">
+                                                                        <a href="maps-google.html" class="nav-link" data-key="t-google">
+                                                                            -Active
+                                                                        </a>
+                                                                    </li>
+                                                                    <li class="nav-item">
+                                                                        <a href="maps-vector.html" class="nav-link" data-key="t-vector">
+                                                                           -Deactive
+                                                                        </a>
+                                                                    </li>
+                                                                  
+                                                                </ul>
+                                                            </div>
+                                                        </li>
+                                                        <li><a class="dropdown-item" href="#">Delete</a></li>
+                                                        </ul>
+                                                        </div>
+                                                        </td>
                                                     
                                                     </tr>
                                                     <tr>
@@ -942,16 +990,280 @@
                                                         </th>
                                                         <td class="id" style="display:none;"><a href="javascript:void(0);" class="fw-medium link-primary">#VZ2101</a></td>
                                                       
-                                                        <td class="Requested">Midhun lal</td>
+                                                        <td class="name">Athulya</td>
+                        
+                                                        <td class="company_name">Technopark</td>
                                                         
-                                                        <td class="Lead Title">Digital Marketing</td>
-                                                        <td class="Description">Description text</td>
-                                                        <th class="Action"><a class="nav-link" href="helpcenteroptn.html"><i class="ri-task-fill ri-md"></i></a></th>
-                                                       
+                                                        <td class="leads_score"><span class="badge badge-soft-success">Active</span></td>
+                                                        <td >
+                                                        <div class="dropdown">
+                                                        <a href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                                                        <i class="ri-more-2-fill"></i>
+                                                        </a>
+                                                        
+                                                        <ul class="dropdown-menu " aria-labelledby="dropdownMenuLink">
+                                                        <li><a class="dropdown-item"  href="pages-profile.html">View</a></li>
+                                                        <li>
+                                                            <a class="dropdown-item" href="#sidebarMaps" data-bs-toggle="collapse" role="button" aria-expanded="true" >
+                                                                <span data-key="t-maps">Edit</span>
+                                                            </a>
+                                                            <div class=" simplebar-offset menu-dropdown offset" id="sidebarMaps">
+                                                                <ul class="  nav nav-sm flex-column">
+                                                                    <li class="nav-item">
+                                                                        <a href="maps-google.html" class="nav-link" data-key="t-google">
+                                                                            -Active
+                                                                        </a>
+                                                                    </li>
+                                                                    <li class="nav-item">
+                                                                        <a href="maps-vector.html" class="nav-link" data-key="t-vector">
+                                                                           -Deactive
+                                                                        </a>
+                                                                    </li>
+                                                                  
+                                                                </ul>
+                                                            </div>
+                                                        </li>
+                                                        <li><a class="dropdown-item" href="#">Delete</a></li>
+                                                        </ul>
+                                                        </div>
+                                                        </td>
                                                     
                                                     </tr>
-                                                   
-                                                  
+                                                    <tr>
+                                                        <th scope="row">
+                                                            <div class="form-check">
+                                                                <input class="form-check-input" type="checkbox" name="chk_child" value="option1">
+                                                            </div>
+                                                        </th>
+                                                        <td class="id" style="display:none;"><a href="javascript:void(0);" class="fw-medium link-primary">#VZ2101</a></td>
+                                                      
+                                                        <td class="name">Midhun </td>
+                        
+                                                        <td class="company_name">Technopark</td>
+                                                        
+                                                        <td class="leads_score"><span class="badge badge-soft-success">Active</span></td>
+                                                        <td >
+                                                        <div class="dropdown">
+                                                        <a href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                                                        <i class="ri-more-2-fill"></i>
+                                                        </a>
+                                                        
+                                                        <ul class="dropdown-menu " aria-labelledby="dropdownMenuLink">
+                                                        <li><a class="dropdown-item"  href="pages-profile.html">View</a></li>
+                                                        <li>
+                                                            <a class="dropdown-item" href="#sidebarMaps" data-bs-toggle="collapse" role="button" aria-expanded="true" >
+                                                                <span data-key="t-maps">Edit</span>
+                                                            </a>
+                                                            <div class=" simplebar-offset menu-dropdown offset" id="sidebarMaps">
+                                                                <ul class="  nav nav-sm flex-column">
+                                                                    <li class="nav-item">
+                                                                        <a href="maps-google.html" class="nav-link" data-key="t-google">
+                                                                            -Active
+                                                                        </a>
+                                                                    </li>
+                                                                    <li class="nav-item">
+                                                                        <a href="maps-vector.html" class="nav-link" data-key="t-vector">
+                                                                           -Deactive
+                                                                        </a>
+                                                                    </li>
+                                                                  
+                                                                </ul>
+                                                            </div>
+                                                        </li>
+                                                        <li><a class="dropdown-item" href="#">Delete</a></li>
+                                                        </ul>
+                                                        </div>
+                                                        </td>
+                                                    
+                                                    </tr>
+                                                    <tr>
+                                                        <th scope="row">
+                                                            <div class="form-check">
+                                                                <input class="form-check-input" type="checkbox" name="chk_child" value="option1">
+                                                            </div>
+                                                        </th>
+                                                        <td class="id" style="display:none;"><a href="javascript:void(0);" class="fw-medium link-primary">#VZ2101</a></td>
+                                                      
+                                                        <td class="name">Rajesh</td>
+                        
+                                                        <td class="company_name">Technopark</td>
+                                                        
+                                                        <td class="leads_score"><span class="badge badge-soft-success">Active</span></td>
+                                                        <td >
+                                                        <div class="dropdown">
+                                                        <a href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                                                        <i class="ri-more-2-fill"></i>
+                                                        </a>
+                                                        
+                                                        <ul class="dropdown-menu " aria-labelledby="dropdownMenuLink">
+                                                        <li><a class="dropdown-item"  href="pages-profile.html">View</a></li>
+                                                        <li>
+                                                            <a class="dropdown-item" href="#sidebarMaps" data-bs-toggle="collapse" role="button" aria-expanded="true" >
+                                                                <span data-key="t-maps">Edit</span>
+                                                            </a>
+                                                            <div class=" simplebar-offset menu-dropdown offset" id="sidebarMaps">
+                                                                <ul class="  nav nav-sm flex-column">
+                                                                    <li class="nav-item">
+                                                                        <a href="maps-google.html" class="nav-link" data-key="t-google">
+                                                                            -Active
+                                                                        </a>
+                                                                    </li>
+                                                                    <li class="nav-item">
+                                                                        <a href="maps-vector.html" class="nav-link" data-key="t-vector">
+                                                                           -Deactive
+                                                                        </a>
+                                                                    </li>
+                                                                  
+                                                                </ul>
+                                                            </div>
+                                                        </li>
+                                                        <li><a class="dropdown-item" href="#">Delete</a></li>
+                                                        </ul>
+                                                        </div>
+                                                        </td>
+                                                    
+                                                    </tr>
+                                                    <tr>
+                                                        <th scope="row">
+                                                            <div class="form-check">
+                                                                <input class="form-check-input" type="checkbox" name="chk_child" value="option1">
+                                                            </div>
+                                                        </th>
+                                                        <td class="id" style="display:none;"><a href="javascript:void(0);" class="fw-medium link-primary">#VZ2101</a></td>
+                                                      
+                                                        <td class="name">Amal</td>
+                        
+                                                        <td class="company_name">Technopark</td>
+                                                        
+                                                        <td class="leads_score"><span class="badge badge-soft-success">Active</span></td>
+                                                        <td >
+                                                        <div class="dropdown">
+                                                        <a href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                                                        <i class="ri-more-2-fill"></i>
+                                                        </a>
+                                                        
+                                                        <ul class="dropdown-menu " aria-labelledby="dropdownMenuLink">
+                                                        <li><a class="dropdown-item"  href="pages-profile.html">View</a></li>
+                                                        <li>
+                                                            <a class="dropdown-item" href="#sidebarMaps" data-bs-toggle="collapse" role="button" aria-expanded="true" >
+                                                                <span data-key="t-maps">Edit</span>
+                                                            </a>
+                                                            <div class=" simplebar-offset menu-dropdown offset" id="sidebarMaps">
+                                                                <ul class="  nav nav-sm flex-column">
+                                                                    <li class="nav-item">
+                                                                        <a href="maps-google.html" class="nav-link" data-key="t-google">
+                                                                            -Active
+                                                                        </a>
+                                                                    </li>
+                                                                    <li class="nav-item">
+                                                                        <a href="maps-vector.html" class="nav-link" data-key="t-vector">
+                                                                           -Deactive
+                                                                        </a>
+                                                                    </li>
+                                                                  
+                                                                </ul>
+                                                            </div>
+                                                        </li>
+                                                        <li><a class="dropdown-item" href="#">Delete</a></li>
+                                                        </ul>
+                                                        </div>
+                                                        </td>
+                                                    
+                                                    </tr>
+                                                    <tr>
+                                                        <th scope="row">
+                                                            <div class="form-check">
+                                                                <input class="form-check-input" type="checkbox" name="chk_child" value="option1">
+                                                            </div>
+                                                        </th>
+                                                        <td class="id" style="display:none;"><a href="javascript:void(0);" class="fw-medium link-primary">#VZ2101</a></td>
+                                                      
+                                                        <td class="name">Ehas</td>
+                        
+                                                        <td class="company_name">Technopark</td>
+                                                        
+                                                        <td class="leads_score"><span class="badge badge-soft-success">Active</span></td>
+                                                        <td >
+                                                        <div class="dropdown">
+                                                        <a href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                                                        <i class="ri-more-2-fill"></i>
+                                                        </a>
+                                                        
+                                                        <ul class="dropdown-menu " aria-labelledby="dropdownMenuLink">
+                                                        <li><a class="dropdown-item"  href="pages-profile.html">View</a></li>
+                                                        <li>
+                                                            <a class="dropdown-item" href="#sidebarMaps" data-bs-toggle="collapse" role="button" aria-expanded="true" >
+                                                                <span data-key="t-maps">Edit</span>
+                                                            </a>
+                                                            <div class=" simplebar-offset menu-dropdown offset" id="sidebarMaps">
+                                                                <ul class="  nav nav-sm flex-column">
+                                                                    <li class="nav-item">
+                                                                        <a href="maps-google.html" class="nav-link" data-key="t-google">
+                                                                            -Active
+                                                                        </a>
+                                                                    </li>
+                                                                    <li class="nav-item">
+                                                                        <a href="maps-vector.html" class="nav-link" data-key="t-vector">
+                                                                           -Deactive
+                                                                        </a>
+                                                                    </li>
+                                                                  
+                                                                </ul>
+                                                            </div>
+                                                        </li>
+                                                        <li><a class="dropdown-item" href="#">Delete</a></li>
+                                                        </ul>
+                                                        </div>
+                                                        </td>
+                                                    
+                                                    </tr>
+                                                    <tr>
+                                                        <th scope="row">
+                                                            <div class="form-check">
+                                                                <input class="form-check-input" type="checkbox" name="chk_child" value="option1">
+                                                            </div>
+                                                        </th>
+                                                        <td class="id" style="display:none;"><a href="javascript:void(0);" class="fw-medium link-primary">#VZ2101</a></td>
+                                                      
+                                                        <td class="name">Ehas</td>
+                        
+                                                        <td class="company_name">Technopark</td>
+                                                        
+                                                        <td class="leads_score"><span class="badge badge-soft-success">Active</span></td>
+                                                        <td >
+                                                        <div class="dropdown">
+                                                        <a href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                                                        <i class="ri-more-2-fill"></i>
+                                                        </a>
+                                                        
+                                                        <ul class="dropdown-menu " aria-labelledby="dropdownMenuLink">
+                                                        <li><a class="dropdown-item"  href="pages-profile.html">View</a></li>
+                                                        <li>
+                                                            <a class="dropdown-item" href="#sidebarMaps" data-bs-toggle="collapse" role="button" aria-expanded="true" >
+                                                                <span data-key="t-maps">Edit</span>
+                                                            </a>
+                                                            <div class=" simplebar-offset menu-dropdown offset" id="sidebarMaps">
+                                                                <ul class="  nav nav-sm flex-column">
+                                                                    <li class="nav-item">
+                                                                        <a href="maps-google.html" class="nav-link" data-key="t-google">
+                                                                            -Active
+                                                                        </a>
+                                                                    </li>
+                                                                    <li class="nav-item">
+                                                                        <a href="maps-vector.html" class="nav-link" data-key="t-vector">
+                                                                           -Deactive
+                                                                        </a>
+                                                                    </li>
+                                                                  
+                                                                </ul>
+                                                            </div>
+                                                        </li>
+                                                        <li><a class="dropdown-item" href="#">Delete</a></li>
+                                                        </ul>
+                                                        </div>
+                                                        </td>
+                                                    
+                                                    </tr>
                                                 </tbody>
                                             </table>
                                             <div class="noresult" style="display: none">
@@ -975,6 +1287,274 @@
                                         </div>
                                     </div>
 
+                                    <div class="modal fade" id="showModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">
+                                            
+                                            <!-- Modal Header -->
+                                            <div class="modal-header">
+                                            
+                                            <button type="button" class="btn-close btn-light bg-soft-light" data-bs-dismiss="modal"></button>
+                                            </div>
+                                            
+                                            <!-- Modal body -->
+                                            <div class="modal-body">
+                                            
+                                            <div class="auth-page-wrapper pt-5">
+                                            <!-- auth page bg -->
+                                            <div class="auth-one-bg-position auth-one-bg" id="auth-particles">
+                                            <div class="bg-overlay"></div>
+                                            
+                                            <div class="shape">
+                                            <svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1440 120">
+                                            <path d="M 0,36 C 144,53.6 432,123.2 720,124 C 1008,124.8 1296,56.8 1440,40L1440 140L0 140z"></path>
+                                            </svg>
+                                            </div>
+                                            </div>
+                                            
+                                            <!-- auth page content -->
+                                            <div class="auth-page-content">
+                                            <div class="container">
+                                            
+                                            <!-- end row -->
+                                            
+                                            <div class="row justify-content-center">
+                                            <div class="col-md-12 col-lg-12 col-xl-12">
+                                            <div class="card mt-4" id="card-modal">
+                                            <div class="text-center mt-sm-5 mb-2 text-white-50">
+                                            <div>
+                                            <a href="index.html" class="d-inline-block auth-logo">
+                                            <img src="assets/images/A2z_logo.jpg" alt="" height="50px">
+                                            </a>
+                                            </div>
+                                            
+                                            </div>
+                                            <div class="card-body p-4">
+                                            <div class="text-center mt-2">
+                                            <h5 class="text-primary"> Create New Account</h5>
+                                            <p class="text-muted">Get your free A2ZAlphabetsolutionz- account now</p>
+                                            </div>
+                                            <div class="p-2 mt-4">
+                                                <form class="needs-validation">
+                                                    <div class="row">
+                                                           <div class="col-lg-6">
+                                                                   <div class="mb-3">
+                                                                       <label for="username" class="form-label">Username <span class="text-danger">*</span></label>
+                                                                       <input type="text" class="form-control" id="username" placeholder="Enter username" required>
+                                                                       <div class="invalid-feedback">
+                                                                       Please enter username
+                                                                       </div>
+                                                                   </div>
+                                                           </div>
+                                                           <div class="col-lg-6">
+                                                                   <div class="mb-3">
+                                                                       <label class="form-label" for="password-input">Password<span class="text-danger">*</span></label>
+                                                                       <div class="position-relative auth-pass-inputgroup">
+                                                                       <input type="password" class="form-control pe-5 password-input" onpaste="return false" placeholder="Enter password" id="password-input" aria-describedby="passwordInput" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required>
+                                                                       <button class="btn btn-link position-absolute end-0 top-0 text-decoration-none text-muted password-addon" type="button" id="password-addon"><i class="ri-eye-fill align-middle"></i></button>
+                                                                       <div class="invalid-feedback">
+                                                                       Please enter password
+                                                                       </div>
+                                                                       </div>
+                                                                   </div>
+                                                           </div>
+                                                    </div>   
+                                                    <div class="row">
+                                                           <div class="col-lg-6">
+                                                               <div class="mb-3">
+                                                                   <label for="designation" class="form-label">User Type<span class="text-danger">*</span></label>
+                                                                   <select class="form-control" id="designation" required>
+                                                                   
+                                                                   <option value="" selected="true" disabled="disabled">Select User Type </option>
+                                                                   <option value="1">UserType 1</option>
+                                                                   <option value="2">UserType 2</option>
+                                                                   </select>
+                                                                   <div class="invalid-feedback">
+                                                                   please enter UserType
+                                                                   </div>
+                                                               </div>
+                                                           </div>
+                                                           <div class="col-lg-6">
+                                                               <div class="mb-3">
+                                                                   <label for="phone" class="form-label">Contact Number <span class="text-danger">*</span></label>
+                                                                   <input type="text" class="form-control" id="Contact" placeholder="Enter Contact Number" required>
+                                                                   <div class="invalid-feedback">
+                                                                   Please enter Contact Number
+                                                                   </div>
+                                                               </div>
+                                                           </div>
+                                                    </div>
+                                                   
+                                                   
+                                                  
+                                                   <div class="mb-3">
+                                                   <label for="designation" class="form-label">Branch<span class="text-danger">*</span></label>
+                                                   <select class="form-control" id="branch" required>
+                                                   
+                                                   <option value="" selected="true" disabled="disabled">Select Branches </option>
+                                                   <option value="1"> Branch 1</option>
+                                                   <option value="2">Branch 2</option>
+                                                   </select>
+                                                   <div class="invalid-feedback">
+                                                   please enter Branch
+                                                   </div>
+                                                   
+                                                   </div>
+                                                   <div class="row">
+                                                         <div class="col-lg-6">
+                                                               <div class="mb-3">
+                                                                   <label for="photo" class="form-label">Photo</label>
+                                                                   <input class="form-control" type="file" id="formFile" placeholder="Upload Photo">
+                                                                   
+                                                                   
+                                                               </div>
+                                                         </div>
+                                                         <div class="col-lg-6">
+                                                           <div class="mb-3">
+                                                               <label for="cover" class="form-label">Upload Cover Photo</label>
+                                                               <input class="form-control" type="file" id="formFile" placeholder="Upload Photo">
+                                                               
+                                                               
+                                                               </div>
+                                                         </div>
+                                                   </div>
+                                                   
+                                                   
+                                                   <div class="mb-3">
+                                                   <label for="useremail" class="form-label">Email <span class="text-danger">*</span></label>
+                                                   <input type="email" class="form-control" id="useremail" placeholder="Enter email address" required>
+                                                   <div class="invalid-feedback">
+                                                   Please enter email
+                                                   </div>
+                                                   </div>
+                                                   
+                                                   
+                                                  
+                                                   <div class="mb-3">
+                                                   <label class="form-label" for="visiblity">Visiblity<span class="text-danger">*</span></label>
+                                                   <div class="position-relative ">
+                                                   <input type="radio" class="form-check-input me-3" id="radio1" name="optradio" value="option1" checked required="required"><span class="me-2">Public</span>
+                                                   <input type="radio" class="form-check-input me-3" id="radio1" name="optradio" value="option1" checked required="required"><span class="me-2">Private</span>
+                                                   </div>
+                                                   <div class="invalid-feedback">
+                                                   Please enter password
+                                                   </div>
+                                                   </div>
+                                                   <div class="mb-3">
+                                                   <label class="form-label" for="visiblity">Employee Type<span class="text-danger">*</span></label>
+                                                   <div class="position-relative">
+                                                   <input type="radio" class="form-check-input" id="radio1" name="optradio" value="option1" checked required="required" ><span class="ms-2"> Global</span>
+                                                   <input type="radio" class="form-check-input ms-3" id="radio1" name="optradio" value="option1" checked required="required"><span class="ms-2"> Local</span>
+                                                   </div>
+                                                   </div>
+                                                   <div class="mb-3">
+                                                   <label class="form-label" for="address">Address<span class="text-danger">*</span></label>
+                                                   <textarea class="form-control" id="address" required></textarea>
+                                                   <div class="invalid-feedback">
+                                                   Please enter address
+                                                   </div>
+                                                   </div>
+                                                   <!-- <div class="mb-4">
+                                                   <p class="mb-0 fs-12 text-muted fst-italic">By registering you agree to the A2zAlphabetsolutionz <a href="#" class="text-primary text-decoration-underline fst-normal fw-medium">Terms of Use</a></p>
+                                                   </div> -->
+                                                   
+                                                   <div id="password-contain" class="p-3 bg-light mb-2 rounded">
+                                                   <h5 class="fs-13">Password must contain:</h5>
+                                                   <p id="pass-length" class="invalid fs-12 mb-2">Minimum <b>8 characters</b></p>
+                                                   <p id="pass-lower" class="invalid fs-12 mb-2">At <b>lowercase</b> letter (a-z)</p>
+                                                   <p id="pass-upper" class="invalid fs-12 mb-2">At least <b>uppercase</b> letter (A-Z)</p>
+                                                   <p id="pass-number" class="invalid fs-12 mb-0">A least <b>number</b> (0-9)</p>
+                                                   </div>
+                                                   
+                                                   <div class="mt-4">
+                                                   <button class="btn btn-success w-100" type="submit">Sign Up</button>
+                                                   </div>
+                                                   
+                                                   <!-- <div class="mt-4 text-center">
+                                                   <div class="signin-other-title">
+                                                   <h5 class="fs-13 mb-4 title text-muted">Create account with</h5>
+                                                   </div>
+                                                   
+                                                   <div>
+                                                   <button type="button" class="btn btn-primary btn-icon waves-effect waves-light"><i class="ri-facebook-fill fs-16"></i></button>
+                                                   <button type="button" class="btn btn-danger btn-icon waves-effect waves-light"><i class="ri-google-fill fs-16"></i></button>
+                                                   <button type="button" class="btn btn-dark btn-icon waves-effect waves-light"><i class="ri-github-fill fs-16"></i></button>
+                                                   <button type="button" class="btn btn-info btn-icon waves-effect waves-light"><i class="ri-twitter-fill fs-16"></i></button>
+                                                   </div>
+                                                   </div> -->
+                                                   </form>
+                                            
+                                            </div>
+                                            </div>
+                                            <!-- end card body -->
+                                            </div>
+                                            <!-- end card -->
+                                            
+                                            <div class="mt-4 text-center">
+                                            <p class="mb-0">Already have an account ? <a href="auth-signin-basic.html" class="fw-semibold text-primary text-decoration-underline"> Signin </a> </p>
+                                            </div>
+                                            
+                                            </div>
+                                            </div>
+                                            <!-- end row -->
+                                            </div>
+                                            <!-- end container -->
+                                            </div>
+                                            <!-- end auth page content -->
+                                            
+                                            <!-- footer -->
+                                            
+                                            <footer class="footer">
+                                            <div class="container">
+                                            <div class="row">
+                                            <div class="col-lg-12">
+                                            <div class="text-center">
+                                            
+                                            <p class="mb-0 text-muted">&copy;
+                                            <script>document.write(new Date().getFullYear())</script> Design & Developed by <a href="https://a2zalphabetsolutionz.com" >A2ZAlphabetsolutionz PVT Ltd.</a>
+                                            </p>
+                                            
+                                            </div>
+                                            
+                                            </div>
+                                            </div>
+                                            </div>
+                                            </footer>
+                                            <!-- end Footer -->
+                                            </div>
+                                            </div>
+                                            
+                                            <!-- Modal footer -->
+                                            <div class="modal-footer">
+                                            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                                            </div>
+                                            
+                                    </div>
+                                    <!--end modal-->
+
+                                    <!-- Modal -->
+                                    <div class="modal fade zoomIn" id="deleteRecordModal" tabindex="-1" aria-labelledby="deleteRecordLabel" aria-hidden="true">
+                                        <div class="modal-dialog modal-dialog-centered">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" id="btn-close"></button>
+                                                </div>
+                                                <div class="modal-body p-5 text-center">
+                                                    <lord-icon src="https://cdn.lordicon.com/gsqxdxog.json" trigger="loop" colors="primary:#405189,secondary:#f06548" style="width:90px;height:90px"></lord-icon>
+                                                    <div class="mt-4 text-center">
+                                                        <h4 class="fs-semibold">You are about to delete a lead ?</h4>
+                                                        <p class="text-muted fs-14 mb-4 pt-1">Deleting your lead will remove all of your information from our database.</p>
+                                                        <div class="hstack gap-2 justify-content-center remove">
+
+                                                            <button class="btn btn-link link-success fw-medium text-decoration-none" id="deleteRecord-close" data-bs-dismiss="modal"><i class="ri-close-line me-1 align-middle"></i> Close</button>
+                                                            <button class="btn btn-danger" id="delete-record">Yes, Delete It!!</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--end modal -->
 
 
                                     <!--end offcanvas-->
@@ -985,310 +1565,12 @@
                         </div>
                         <!--end col-->
                     </div>
-                    <div class="row justify-content-center">
-                        <div class="col-lg-8">
-                            <div class="card" id="leadsList">
-                                <div class="card-header border-0">
+                    <!--end row-->
 
-                                    <div class="row g-4 align-items-center">
-                                        <div class="col-sm-3">
-                                            <div class="search-box">
-                                                <input type="text" class="form-control search" placeholder="Search for...">
-                                                <i class="ri-search-line search-icon"></i>
-                                            </div>
-                                        </div>
-                                     
-                                    </div>
-                                </div>
-                                
-                                <div class="card-body">
-                                    <div>
-                                        <div class="table-responsive table-card">
-                                            <table class="table align-middle" id="customerTable">
-                                                <thead class="table-light">
-                                                    <tr>
-                                                        <th scope="col" style="width: 50px;">
-                                                            <div class="form-check">
-                                                                <input class="form-check-input" type="checkbox" id="checkAll" value="option">
-                                                            </div>
-                                                        </th>
-
-                                                        <th class="sort" data-sort="leadtitle">Leads Title</th>
-                                                        <th class="sort" data-sort="businessname">Business Name</th>
-                                                        <th class="sort" data-sort="exitlead">Exit Lead</th>
-                                                        <th class="sort" data-sort="Manpowerrequest">Man Power Request</th>
-                                                        
-                                                       
-                                                    </tr>
-                                                </thead>
-                                                <tbody class="list form-check-all">
-                                                    <tr>
-                                                        <th scope="row">
-                                                            <div class="form-check">
-                                                                <input class="form-check-input" type="checkbox" name="chk_child" value="option1">
-                                                            </div>
-                                                        </th>
-                                                        <td class="id" style="display:none;"><a href="javascript:void(0);" class="fw-medium link-primary">#VZ2101</a></td>
-                                                      
-                                                        <td class="leadtitle">SEO</td>
-                                                        
-                                                        <td class="businessname">view</td>
-                                                        
-                                                        <td class="exitlead"><a type="button"  data-bs-toggle="modal" id="create-btn" data-bs-target="#showModal"><i class="mdi mdi-exit-run text-danger ri-md"></i></a></td>
-                                                        <td class="exitlead"><a type="button" data-bs-toggle="modal" id="create-btn" data-bs-target="#showModal1"> <i class="lab   las la-hands-helping text-primary la-md"></i></a></td>
-                                                       
-                                                       
-                                                    
-                                                    </tr>
-                                                    <tr>
-                                                        <th scope="row">
-                                                            <div class="form-check">
-                                                                <input class="form-check-input" type="checkbox" name="chk_child" value="option1">
-                                                            </div>
-                                                        </th>
-                                                        <td class="id" style="display:none;"><a href="javascript:void(0);" class="fw-medium link-primary">#VZ2101</a></td>
-                                                      
-                                                        <td class="leadtitle">SEO</td>
-                                                        
-                                                        <td class="businessname">view</td>
-                                                        
-                                                        <td class="exitlead"><a type="button"  data-bs-toggle="modal" id="create-btn" data-bs-target="#showModal"><i class="mdi mdi-exit-run text-danger ri-md"></i></a></td>
-                                                        <td class="exitlead"><a type="button" data-bs-toggle="modal" id="create-btn" data-bs-target="#showModal1"> <i class="lab   las la-hands-helping text-primary la-md"></i></a></td>
-                                                       
-                                                       
-                                                    
-                                                    </tr>
-                                                    <tr>
-                                                        <th scope="row">
-                                                            <div class="form-check">
-                                                                <input class="form-check-input" type="checkbox" name="chk_child" value="option1">
-                                                            </div>
-                                                        </th>
-                                                        <td class="id" style="display:none;"><a href="javascript:void(0);" class="fw-medium link-primary">#VZ2101</a></td>
-                                                      
-                                                        <td class="leadtitle">SEO</td>
-                                                        
-                                                        <td class="businessname">view</td>
-                                                        
-                                                        <td class="exitlead"><a type="button"  data-bs-toggle="modal" id="create-btn" data-bs-target="#showModal"><i class="mdi mdi-exit-run text-danger ri-md"></i></a></td>
-                                                        <td class="exitlead"><a type="button" data-bs-toggle="modal" id="create-btn" data-bs-target="#showModal1"> <i class="lab   las la-hands-helping text-primary la-md"></i></a></td>
-                                                       
-                                                       
-                                                    
-                                                    </tr>
-                                                    <tr>
-                                                        <th scope="row">
-                                                            <div class="form-check">
-                                                                <input class="form-check-input" type="checkbox" name="chk_child" value="option1">
-                                                            </div>
-                                                        </th>
-                                                        <td class="id" style="display:none;"><a href="javascript:void(0);" class="fw-medium link-primary">#VZ2101</a></td>
-                                                      
-                                                        <td class="leadtitle">SEO</td>
-                                                        
-                                                        <td class="businessname">view</td>
-                                                        
-                                                        <td class="exitlead"><a type="button"  data-bs-toggle="modal" id="create-btn" data-bs-target="#showModal"><i class="mdi mdi-exit-run text-danger ri-md"></i></a></td>
-                                                        <td class="exitlead"><a type="button" data-bs-toggle="modal" id="create-btn" data-bs-target="#showModal1"> <i class="lab   las la-hands-helping text-primary la-md"></i></a></td>
-                                                       
-                                                       
-                                                    
-                                                    </tr>
-                                                    <tr>
-                                                        <th scope="row">
-                                                            <div class="form-check">
-                                                                <input class="form-check-input" type="checkbox" name="chk_child" value="option1">
-                                                            </div>
-                                                        </th>
-                                                        <td class="id" style="display:none;"><a href="javascript:void(0);" class="fw-medium link-primary">#VZ2101</a></td>
-                                                      
-                                                        <td class="leadtitle">Web Developer</td>
-                                                        
-                                                        <td class="businessname">view</td>
-                                                        
-                                                        <td class="exitlead"><a type="button"  data-bs-toggle="modal" id="create-btn" data-bs-target="#showModal"><i class="mdi mdi-exit-run text-danger ri-md"></i></a></td>
-                                                        <td class="exitlead"><a type="button" data-bs-toggle="modal" id="create-btn" data-bs-target="#showModal1"> <i class="lab   las la-hands-helping text-primary la-md"></i></a></td>
-                                                       
-                                                       
-                                                    
-                                                    </tr>
-                                                    <tr>
-                                                        <th scope="row">
-                                                            <div class="form-check">
-                                                                <input class="form-check-input" type="checkbox" name="chk_child" value="option1">
-                                                            </div>
-                                                        </th>
-                                                        <td class="id" style="display:none;"><a href="javascript:void(0);" class="fw-medium link-primary">#VZ2101</a></td>
-                                                      
-                                                        <td class="leadtitle">Web Developer</td>
-                                                        
-                                                        <td class="businessname">view</td>
-                                                        
-                                                        <td class="exitlead"><a type="button"  data-bs-toggle="modal" id="create-btn" data-bs-target="#showModal"><i class="mdi mdi-exit-run text-danger ri-md"></i></a></td>
-                                                        <td class="exitlead"><a type="button" data-bs-toggle="modal" id="create-btn" data-bs-target="#showModal1"> <i class="lab   las la-hands-helping text-primary la-md"></i></a></td>
-                                                       
-                                                       
-                                                    
-                                                    </tr>
-                                                    <tr>
-                                                        <th scope="row">
-                                                            <div class="form-check">
-                                                                <input class="form-check-input" type="checkbox" name="chk_child" value="option1">
-                                                            </div>
-                                                        </th>
-                                                        <td class="id" style="display:none;"><a href="javascript:void(0);" class="fw-medium link-primary">#VZ2101</a></td>
-                                                      
-                                                        <td class="leadtitle">Web Developer</td>
-                                                        
-                                                        <td class="businessname">view</td>
-                                                        
-                                                        <td class="exitlead"><a type="button"  data-bs-toggle="modal" id="create-btn" data-bs-target="#showModal"><i class="mdi mdi-exit-run text-danger ri-md"></i></a></td>
-                                                        <td class="exitlead"><a type="button" data-bs-toggle="modal" id="create-btn" data-bs-target="#showModal1"> <i class="lab   las la-hands-helping text-primary la-md"></i></a></td>
-                                                       
-                                                       
-                                                    
-                                                    </tr>
-                                                    <tr>
-                                                        <th scope="row">
-                                                            <div class="form-check">
-                                                                <input class="form-check-input" type="checkbox" name="chk_child" value="option1">
-                                                            </div>
-                                                        </th>
-                                                        <td class="id" style="display:none;"><a href="javascript:void(0);" class="fw-medium link-primary">#VZ2101</a></td>
-                                                      
-                                                        <td class="leadtitle">Web Developer</td>
-                                                        
-                                                        <td class="businessname">view</td>
-                                                        
-                                                        <td class="exitlead"><a type="button"  data-bs-toggle="modal" id="create-btn" data-bs-target="#showModal"><i class="mdi mdi-exit-run text-danger ri-md"></i></a></td>
-                                                        <td class="exitlead"><a type="button" data-bs-toggle="modal" id="create-btn" data-bs-target="#showModal1"> <i class="lab   las la-hands-helping text-primary la-md"></i></a></td>
-                                                       
-                                                       
-                                                    
-                                                    </tr>
-                                                    <tr>
-                                                        <th scope="row">
-                                                            <div class="form-check">
-                                                                <input class="form-check-input" type="checkbox" name="chk_child" value="option1">
-                                                            </div>
-                                                        </th>
-                                                        <td class="id" style="display:none;"><a href="javascript:void(0);" class="fw-medium link-primary">#VZ2101</a></td>
-                                                      
-                                                        <td class="leadtitle">Digial Marketing</td>
-                                                        
-                                                        <td class="businessname">view</td>
-                                                        
-                                                        <td class="exitlead"><a type="button"  data-bs-toggle="modal" id="create-btn" data-bs-target="#showModal"><i class="mdi mdi-exit-run text-danger ri-md"></i></a></td>
-                                                        <td class="exitlead"><a type="button" data-bs-toggle="modal" id="create-btn" data-bs-target="#showModal1"> <i class="lab   las la-hands-helping text-primary la-md"></i></a></td>
-                                                       
-                                                       
-                                                    
-                                                    </tr>
-                                                
-                                                </tbody>
-                                            </table>
-                                            
-                                            <div class="noresult" style="display: none">
-                                                <div class="text-center">
-                                                    <lord-icon src="https://cdn.lordicon.com/msoeawqm.json" trigger="loop" colors="primary:#121331,secondary:#08a88a" style="width:75px;height:75px"></lord-icon>
-                                                    <h5 class="mt-2">Sorry! No Result Found</h5>
-                                                    <p class="text-muted mb-0">We've searched more than 150+ leads We did not find any leads for you search.</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="d-flex justify-content-end mt-3">
-                                            <div class="pagination-wrap hstack gap-2">
-                                                <a class="page-item pagination-prev disabled" href="#">
-                                                    Previous
-                                                </a>
-                                                <ul class="pagination listjs-pagination mb-0"></ul>
-                                                <a class="page-item pagination-next" href="#">
-                                                    Next
-                                                </a>
-                                            </div>
-                                        </div>
-                                        <div class="modal fade" id="showModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                            <div class="modal-dialog modal-dialog-centered ">
-                                                <div class="modal-content">
-                                                    <div class="modal-header bg-light p-3 ">
-                                                        <h5 class="modal-title" id="exampleModalLabel">Leads Add</h5>
-                                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" id="close-modal"></button>
-                                                    </div>
-                                                    <div class="p-3">
-                                                        <form class="needs-validation" novalidate="" action="https://themesbrand.com/velzon/html/default/index.html">
-                                                        
-                                                            <div class="mb-3">
-                                                        
-                                                            <textarea class="form-control"></textarea>
-                                                            <div class="invalid-feedback">
-                                                            Please enter Leads Description
-                                                            </div>
-                                                            </div>
-                                                    
-                                                            <div>
-                                                    
-                                                            <!-- end row -->
-                                                            </div>
-                                                            <div class="mt-2 text-center">
-                                                                <button type="button" class="btn w-sm btn-light" data-bs-dismiss="modal">Close</button>
-                                                                <button class="btn btn-success w-sm " type="submit">Save</button>
-                                                                </div>
-                                                            </div>
-                                                            
-                                                           
-                                                            
-                                                        
-                                                        </form>
-                                                    </div>    
-                                                </div>
-                                        </div>
-                                        <div class="modal fade" id="showModal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                            <div class="modal-dialog modal-dialog-centered ">
-                                                <div class="modal-content">
-                                                    <div class="modal-header bg-light p-3 ">
-                                                        <h5 class="modal-title" id="exampleModalLabel">message</h5>
-                                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" id="close-modal"></button>
-                                                    </div>
-                                                    <div class="p-3">
-                                                        <form class="needs-validation" novalidate="" action="https://themesbrand.com/velzon/html/default/index.html">
-                                                        
-                                                            <div class="mb-3">
-                                                        
-                                                            <textarea class="form-control"></textarea>
-                                                            <div class="invalid-feedback">
-                                                            Please enter Leads Description
-                                                            </div>
-                                                            </div>
-                                                    
-                                                            <div>
-                                                    
-                                                            <!-- end row -->
-                                                            </div>
-                                                            <div class="mt-2 text-center">
-                                                                <button type="button" class="btn w-sm btn-light" data-bs-dismiss="modal">Close</button>
-                                                                <button class="btn btn-success w-sm " type="submit">Save</button>
-                                                                </div>
-                                                            </div>
-                                                            
-                                                           
-                                                          
-                                                        
-                                                        </form>
-                                                    </div>    
-                                                </div>
-                                        </div>
-                                    </div>
-
-                                            
-                                </div>
-
-                                    <!--end offcanvas-->
-
-                                </div>
-                              
-                            </div>
-
-                    </div>
+                </div>
+                <!-- container-fluid -->
+            </div>
+                    
               
 
                 </div>

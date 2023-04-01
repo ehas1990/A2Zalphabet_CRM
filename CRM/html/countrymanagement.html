@@ -6,10 +6,13 @@
 <head>
 
     <meta charset="utf-8" />
-    <title>Leads |A2Z Alphabet Solutionz</title>
+    <title>User Management |A2Z Alphabet Solutionz</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
     <meta content="Themesbrand" name="author" />
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script> -->
     <!-- App favicon -->
     <link rel="shortcut icon" href="assets/images/a2z_icon.jpg">
 
@@ -26,6 +29,7 @@
     <link href="assets/css/app.min.css" rel="stylesheet" type="text/css" />
     <!-- custom Css-->
     <link href="assets/css/custom.min.css" rel="stylesheet" type="text/css" />
+    <link href="assets/css/style.css" rel="stylesheet" type="text/css"/>
 
 </head>
 
@@ -866,12 +870,12 @@
                     <div class="row">
                         <div class="col-12">
                             <div class="page-title-box d-sm-flex align-items-center justify-content-between">
-                                <h4 class="mb-sm-0">Leads Management</h4>
+                                <h4 class="mb-sm-0">Users Management</h4>
 
                                 <div class="page-title-right">
                                     <ol class="breadcrumb m-0">
                                         <li class="breadcrumb-item"><a href="javascript: void(0);">CRM</a></li>
-                                        <li class="breadcrumb-item active">Leads Management</li>
+                                        <li class="breadcrumb-item active">Users Management</li>
                                     </ol>
                                 </div>
 
@@ -881,540 +885,208 @@
                     <!-- end page title -->
 
                     <div class="row">
-                        <div class="col-lg-12">
+                        <div class="col-lg-4">
                             <div class="card" id="leadsList">
+                                <div class="card-title bg-soft-primary"><h3 class="text-center mt-1">State</h3></div>
                                 <div class="card-header border-0">
-
+                                 
                                     <div class="row g-4 align-items-center">
-                                        <div class="col-sm-3">
-                                            <div class="search-box">
-                                                <input type="text" class="form-control search" placeholder="Search for...">
-                                                <i class="ri-search-line search-icon"></i>
-                                            </div>
+                                        <div class="col-sm-6">
+                                            <select class  ="form-control" name="state" id="maxRows">
+                                                <option value="5000">Show ALL Rows</option>
+                                                <option value="5">5</option>
+                                                <option value="10">10</option>
+                                                <option value="15">15</option>
+                                                <option value="20">20</option>
+                                                <option value="50">50</option>
+                                                <option value="70">70</option>
+                                                <option value="100">100</option>
+                                               </select>
                                         </div>
-                                      <div class="col-sm-auto ms-auto">
+                                      <div class="col-sm-auto col-sm-6 ms-auto">
                                             <div class="hstack gap-2">
                                                 <button class="btn btn-soft-danger" id="remove-actions" onClick="deleteMultiple()"><i class="ri-delete-bin-2-line"></i></button>
-                                                <button type="button" class="btn btn-info" data-bs-toggle="offcanvas" href="#offcanvasExample"><i class="ri-filter-3-line align-bottom me-1"></i> Fliters</button>
-                                                <button type="button" class="btn btn-success add-btn" data-bs-toggle="modal" id="create-btn" data-bs-target="#showModal"><i class="ri-add-line align-bottom me-1"></i> Add Leads</button>
-                                               <!-- <span class="dropdown">
-                                                    <button class="btn btn-soft-info btn-icon fs-14" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                                                        <i class="ri-settings-4-line"></i>
-                                                    </button>
-                                                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                                                        <li><a class="dropdown-item" href="#">Copy</a></li>
-                                                        <li><a class="dropdown-item" href="#">Move to pipline</a></li>
-                                                        <li><a class="dropdown-item" href="#">Add to exceptions</a></li>
-                                                        <li><a class="dropdown-item" href="#">Switch to common form view</a></li>
-                                                        <li><a class="dropdown-item" href="#">Reset form view to default</a></li>
-                                                    </ul>
-                                                </span>-->
+                                            
+                                                <button type="button" class="btn btn-success add-btn" data-bs-toggle="modal" id="create-btn" data-bs-target="#showModal"><i class="ri-add-line align-bottom me-1"></i> Add</button>
+                                          
                                             </div>
+                                        </div>
+                                    </div>
+                                    <div class="row mt-2">
+                                        <div class="col-lg-12">
+                                            <input id="search" type="text" class="form-control"  placeholder="Search for .....">
                                         </div>
                                     </div>
                                 </div>
                                 <div class="card-body">
+                                    
                                     <div>
                                         <div class="table-responsive table-card">
-                                            <table class="table align-middle" id="customerTable">
+                                           
+                                          <table class="table " id= "table-id">
                                                 <thead class="table-light">
                                                     <tr>
-                                                        <th scope="col" style="width: 50px;">
-                                                            <div class="form-check">
-                                                                <input class="form-check-input" type="checkbox" id="checkAll" value="option">
-                                                            </div>
-                                                        </th>
-
-                                                        <th class="sort" data-sort="name">Leads Title</th>
-                                                        <th class="sort" data-sort="company_name">Contact Person Name</th>
-                                                        <th class="sort" data-sort="leads_score">Phone</th>
-                                                        <th class="sort" data-sort="phone">View</th>
-                                                        <th class="sort" data-sort="location">Request For Change</th>
+                                                       
+                                                        <th class="sort" data-sort="name">State</th>
+                                                      
+                                                        <th class="sort" data-sort="phone">Action</th>
+                                                        
                                                        
                                                     </tr>
                                                 </thead>
-                                                <tbody class="list form-check-all">
+                                                <tbody>
                                                     <tr>
-                                                        <th scope="row">
-                                                            <div class="form-check">
-                                                                <input class="form-check-input" type="checkbox" name="chk_child" value="option1">
-                                                            </div>
-                                                        </th>
-                                                        <td class="id" style="display:none;"><a href="javascript:void(0);" class="fw-medium link-primary">#VZ2101</a></td>
+                                                       
+                                                        
                                                       
-                                                        <td class="company_name">SEO</td>
-                                                        <td class="leads_score">Athulya </td>
-                                                        <td class="phone">9624687548</td>
-                                                        <td class="location"><a href="leads-view.html"><i class="bx bx-show"></i></a></td>
-                                                        <td class="location"><a href="leadedit.html"><i class="bx bx-edit-alt"></i></a></td>
-                                                    
+                                                        <td class="name">Kerala</td>
+                                                        <td>
+                                                         
+                                                              <i class="fa fa-edit"></i>Edit
+                                                              <i class="fa"></i>delete
+                                                           
+                                                      </td>
+                                                       
                                                     </tr>
                                                     <tr>
-                                                        <th scope="row">
-                                                            <div class="form-check">
-                                                                <input class="form-check-input" type="checkbox" name="chk_child" value="option1">
-                                                            </div>
-                                                        </th>
+                                                       
                                                         <td class="id" style="display:none;"><a href="javascript:void(0);" class="fw-medium link-primary">#VZ2101</a></td>
                                                       
-                                                        <td class="company_name">Digital Marketing</td>
-                                                        <td class="leads_score">Rajesh</td>
-                                                        <td class="phone">9624687548</td>
-                                                        <td class="location"><a href="leads-view.html"><i class="bx bx-show"></i></a></td>
-                                                        <td class="location"><a href="leadedit.html"><i class="bx bx-edit-alt"></i></a></td>
-                                                    
+                                                        <td class="name">TamilNadu</td>
+                                                        <td>
+                                                            <ul>
+                                                               <li><i class="fa"></i>Edit </li>
+                                                               <li><i class="fa"></i>delete </li>
+                                                           </ul>
+                                                      </td>
+                                                       
                                                     </tr>
                                                     <tr>
-                                                        <th scope="row">
-                                                            <div class="form-check">
-                                                                <input class="form-check-input" type="checkbox" name="chk_child" value="option1">
-                                                            </div>
-                                                        </th>
+                                                        
                                                         <td class="id" style="display:none;"><a href="javascript:void(0);" class="fw-medium link-primary">#VZ2101</a></td>
                                                       
-                                                        <td class="company_name">Graphic Designer</td>
-                                                        <td class="leads_score">Midhun Lal</td>
-                                                        <td class="phone">9624687548</td>
-                                                        <td class="location"><a href="leads-view.html"><i class="bx bx-show"></i></a></td>
-                                                        <td class="location"><a href="leadedit.html"><i class="bx bx-edit-alt"></i></a></td>
-                                                    
+                                                        <td class="name">Kerala</td>
+                                                        <td>
+                                                            <ul>
+                                                               <li><i class="fa"></i>Edit </li>
+                                                               <li><i class="fa"></i>delete </li>
+                                                           </ul>
+                                                      </td>
+                                                       
                                                     </tr>
                                                     <tr>
-                                                        <th scope="row">
-                                                            <div class="form-check">
-                                                                <input class="form-check-input" type="checkbox" name="chk_child" value="option1">
-                                                            </div>
-                                                        </th>
+                                                        
                                                         <td class="id" style="display:none;"><a href="javascript:void(0);" class="fw-medium link-primary">#VZ2101</a></td>
                                                       
-                                                        <td class="company_name">Web Developer</td>
-                                                        <td class="leads_score">Ehas</td>
-                                                        <td class="phone">9624687548</td>
-                                                        <td class="location"><a href="leads-view.html"><i class="bx bx-show"></i></a></td>
-                                                        <td class="location"><a href="leadedit.html"><i class="bx bx-edit-alt"></i></a></td>
-                                                    
+                                                        <td class="name">TamilNadu</td>
+                                                        <td>
+                                                            <ul>
+                                                               <li><i class="fa"></i>Edit </li>
+                                                               <li><i class="fa"></i>delete </li>
+                                                           </ul>
+                                                      </td>
+                                                       
                                                     </tr>
                                                     <tr>
-                                                        <th scope="row">
-                                                            <div class="form-check">
-                                                                <input class="form-check-input" type="checkbox" name="chk_child" value="option1">
-                                                            </div>
-                                                        </th>
+                                                       
                                                         <td class="id" style="display:none;"><a href="javascript:void(0);" class="fw-medium link-primary">#VZ2101</a></td>
                                                       
-                                                        <td class="company_name">SEO</td>
-                                                        <td class="leads_score">Midhun </td>
-                                                        <td class="phone">9624687548</td>
-                                                        <td class="location"><a href="leads-view.html"><i class="bx bx-show"></i></a></td>
-                                                        <td class="location"><a href="leadedit.html"><i class="bx bx-edit-alt"></i></a></td>
-                                                    
+                                                        <td class="name">Kerala</td>
+                                                        <td>
+                                                            <ul>
+                                                               <li><i class="fa"></i>Edit </li>
+                                                               <li><i class="fa"></i>delete </li>
+                                                           </ul>
+                                                      </td>
+                                                       
                                                     </tr>
                                                     <tr>
-                                                        <th scope="row">
-                                                            <div class="form-check">
-                                                                <input class="form-check-input" type="checkbox" name="chk_child" value="option1">
-                                                            </div>
-                                                        </th>
+                                                        
                                                         <td class="id" style="display:none;"><a href="javascript:void(0);" class="fw-medium link-primary">#VZ2101</a></td>
                                                       
-                                                        <td class="company_name">Digital Marketing</td>
-                                                        <td class="leads_score">Arya</td>
-                                                        <td class="phone">9624687548</td>
-                                                        <td class="location"><a href="leads-view.html"><i class="bx bx-show"></i></a></td>
-                                                        <td class="location"><a href="leadedit.html"><i class="bx bx-edit-alt"></i></a></td>
-                                                    
+                                                        <td class="name">TamilNadu</td>
+                                                        <td>
+                                                            <ul>
+                                                               <li><i class="fa"></i>Edit </li>
+                                                               <li><i class="fa"></i>delete </li>
+                                                           </ul>
+                                                      </td>
+                                                       
                                                     </tr>
-                                                    <tr>
-                                                        <th scope="row">
-                                                            <div class="form-check">
-                                                                <input class="form-check-input" type="checkbox" name="chk_child" value="option1">
-                                                            </div>
-                                                        </th>
-                                                        <td class="id" style="display:none;"><a href="javascript:void(0);" class="fw-medium link-primary">#VZ2101</a></td>
-                                                      
-                                                        <td class="company_name">Graphic Designer</td>
-                                                        <td class="leads_score">Amal</td>
-                                                        <td class="phone">9624687548</td>
-                                                        <td class="location"><a href="leads-view.html"><i class="bx bx-show"></i></a></td>
-                                                        <td class="location"><a href="leadedit.html"><i class="bx bx-edit-alt"></i></a></td>
-                                                    
-                                                    </tr>
-                                                    <tr>
-                                                        <th scope="row">
-                                                            <div class="form-check">
-                                                                <input class="form-check-input" type="checkbox" name="chk_child" value="option1">
-                                                            </div>
-                                                        </th>
-                                                        <td class="id" style="display:none;"><a href="javascript:void(0);" class="fw-medium link-primary">#VZ2101</a></td>
-                                                      
-                                                        <td class="company_name">Web Developer</td>
-                                                        <td class="leads_score">Hajira</td>
-                                                        <td class="phone">9624687548</td>
-                                                        <td class="location"><a href="leads-view.html"><i class="bx bx-show"></i></a></td>
-                                                        <td class="location"><a href="leadedit.html"><i class="bx bx-edit-alt"></i></a></td>
-                                                    
-                                                    </tr>
-                                                    <tr>
-                                                        <th scope="row">
-                                                            <div class="form-check">
-                                                                <input class="form-check-input" type="checkbox" name="chk_child" value="option1">
-                                                            </div>
-                                                        </th>
-                                                        <td class="id" style="display:none;"><a href="javascript:void(0);" class="fw-medium link-primary">#VZ2101</a></td>
-                                                      
-                                                        <td class="company_name">SEO</td>
-                                                        <td class="leads_score">Priya </td>
-                                                        <td class="phone">9624687548</td>
-                                                        <td class="location"><a href="leads-view.html"><i class="bx bx-show"></i></a></td>
-                                                        <td class="location"><a href="leadedit.html"><i class="bx bx-edit-alt"></i></a></td>
-                                                    
-                                                    </tr>
-                                                    <tr>
-                                                        <th scope="row">
-                                                            <div class="form-check">
-                                                                <input class="form-check-input" type="checkbox" name="chk_child" value="option1">
-                                                            </div>
-                                                        </th>
-                                                        <td class="id" style="display:none;"><a href="javascript:void(0);" class="fw-medium link-primary">#VZ2101</a></td>
-                                                      
-                                                        <td class="company_name">Digital Marketing</td>
-                                                        <td class="leads_score">Doptson</td>
-                                                        <td class="phone">9624687548</td>
-                                                        <td class="location"><a href="leads-view.html"><i class="bx bx-show"></i></a></td>
-                                                        <td class="location"><a href="leadedit.html"><i class="bx bx-edit-alt"></i></a></td>
-                                                    
-                                                    </tr>
-                                                    <tr>
-                                                        <th scope="row">
-                                                            <div class="form-check">
-                                                                <input class="form-check-input" type="checkbox" name="chk_child" value="option1">
-                                                            </div>
-                                                        </th>
-                                                        <td class="id" style="display:none;"><a href="javascript:void(0);" class="fw-medium link-primary">#VZ2101</a></td>
-                                                      
-                                                        <td class="company_name">Graphic Designer</td>
-                                                        <td class="leads_score">Rahul</td>
-                                                        <td class="phone">9624687548</td>
-                                                        <td class="location"><a href="leads-view.html"><i class="bx bx-show"></i></a></td>
-                                                        <td class="location"><a href="leadedit.html"><i class="bx bx-edit-alt"></i></a></td>
-                                                    
-                                                    </tr>
-                                                    <tr>
-                                                        <th scope="row">
-                                                            <div class="form-check">
-                                                                <input class="form-check-input" type="checkbox" name="chk_child" value="option1">
-                                                            </div>
-                                                        </th>
-                                                        <td class="id" style="display:none;"><a href="javascript:void(0);" class="fw-medium link-primary">#VZ2101</a></td>
-                                                      
-                                                        <td class="company_name">Web Developer</td>
-                                                        <td class="leads_score">Praveen</td>
-                                                        <td class="phone">9624687548</td>
-                                                        <td class="location"><a href="leads-view.html"><i class="bx bx-show"></i></a></td>
-                                                        <td class="location"><a href="leadedit.html"><i class="bx bx-edit-alt"></i></a></td>
-                                                    
-                                                    </tr>
-                                                    <tr>
-                                                        <th scope="row">
-                                                            <div class="form-check">
-                                                                <input class="form-check-input" type="checkbox" name="chk_child" value="option1">
-                                                            </div>
-                                                        </th>
-                                                        <td class="id" style="display:none;"><a href="javascript:void(0);" class="fw-medium link-primary">#VZ2101</a></td>
-                                                      
-                                                        <td class="company_name">SEO</td>
-                                                        <td class="leads_score">sneha </td>
-                                                        <td class="phone">9624687548</td>
-                                                        <td class="location"><a href="leads-view.html"><i class="bx bx-show"></i></a></td>
-                                                        <td class="location"><a href="leadedit.html"><i class="bx bx-edit-alt"></i></a></td>
-                                                    
-                                                    </tr>
-                                                    <tr>
-                                                        <th scope="row">
-                                                            <div class="form-check">
-                                                                <input class="form-check-input" type="checkbox" name="chk_child" value="option1">
-                                                            </div>
-                                                        </th>
-                                                        <td class="id" style="display:none;"><a href="javascript:void(0);" class="fw-medium link-primary">#VZ2101</a></td>
-                                                      
-                                                        <td class="company_name">Digital Marketing</td>
-                                                        <td class="leads_score">Jothika</td>
-                                                        <td class="phone">9624687548</td>
-                                                        <td class="location"><a href="leads-view.html"><i class="bx bx-show"></i></a></td>
-                                                        <td class="location"><a href="leadedit.html"><i class="bx bx-edit-alt"></i></a></td>
-                                                    
-                                                    </tr>
-                                                    <tr>
-                                                        <th scope="row">
-                                                            <div class="form-check">
-                                                                <input class="form-check-input" type="checkbox" name="chk_child" value="option1">
-                                                            </div>
-                                                        </th>
-                                                        <td class="id" style="display:none;"><a href="javascript:void(0);" class="fw-medium link-primary">#VZ2101</a></td>
-                                                      
-                                                        <td class="company_name">Graphic Designer</td>
-                                                        <td class="leads_score">Anil</td>
-                                                        <td class="phone">9624687548</td>
-                                                        <td class="location"><a href="leads-view.html"><i class="bx bx-show"></i></a></td>
-                                                        <td class="location"><a href="leadedit.html"><i class="bx bx-edit-alt"></i></a></td>
-                                                    
-                                                    </tr>
-                                                    <tr>
-                                                        <th scope="row">
-                                                            <div class="form-check">
-                                                                <input class="form-check-input" type="checkbox" name="chk_child" value="option1">
-                                                            </div>
-                                                        </th>
-                                                        <td class="id" style="display:none;"><a href="javascript:void(0);" class="fw-medium link-primary">#VZ2101</a></td>
-                                                      
-                                                        <td class="company_name">Web Developer</td>
-                                                        <td class="leads_score">Hajira</td>
-                                                        <td class="phone">9624687548</td>
-                                                        <td class="location"><a href="leads-view.html"><i class="bx bx-show"></i></a></td>
-                                                        <td class="location"><a href="leadedit.html"><i class="bx bx-edit-alt"></i></a></td>
-                                                    
-                                                    </tr>
+                                                 
                                                 </tbody>
                                             </table>
-                                            <div class="noresult" style="display: none">
-                                                <div class="text-center">
-                                                    <lord-icon src="https://cdn.lordicon.com/msoeawqm.json" trigger="loop" colors="primary:#121331,secondary:#08a88a" style="width:75px;height:75px"></lord-icon>
-                                                    <h5 class="mt-2">Sorry! No Result Found</h5>
-                                                    <p class="text-muted mb-0">We've searched more than 150+ leads We did not find any leads for you search.</p>
-                                                </div>
+                                           
                                             </div>
-                                        </div>
-                                        <div class="d-flex justify-content-end mt-3">
-                                            <div class="pagination-wrap hstack gap-2">
-                                                <a class="page-item pagination-prev disabled" href="#">
-                                                    Previous
-                                                </a>
-                                                <ul class="pagination listjs-pagination mb-0"></ul>
-                                                <a class="page-item pagination-next" href="#">
-                                                    Next
-                                                </a>
                                             </div>
-                                        </div>
-                                    </div>
-
                                     <div class="modal fade" id="showModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                        <div class="modal-dialog modal-dialog-centered ">
-                                            <div class="modal-content">
-                                                <div class="modal-header bg-light p-3 ">
-                                                    <h5 class="modal-title" id="exampleModalLabel">Leads Add</h5>
-                                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" id="close-modal"></button>
-                                                </div>
-                                                <div class="p-3">
-                                                    <form class="needs-validation" novalidate="" action="https://themesbrand.com/velzon/html/default/index.html">
-                                                        <div class="row">
-                                                               <div class="col-lg-6">
-                                                                    <div class="mb-3">
-                                                                        <label for="photo"  class="form-label text-muted">Business Name</label>
-                                                                        <input class="form-control" type="text" id="Business Name" placeholder="Enter Business Name">
-                                                                        
-                                                                        
-                                                                    </div>
-                                                               </div>
-                                                               <div class="col-lg-6">
-                                                                    <div class="mb-3">
-                                                                        <label for="autoCompleteFruit"  class="form-label text-muted">Business Catagories</label>
-                                                                        <select class="form-control" id="Leads Catagories" required="">
-                                                                        
-                                                                        <option value="" selected="true" disabled="disabled">Select Business Catagories </option>
-                                                                        
-                                                                        <option value="SEO"> SEO</option>
-                                                                        <option value="Website">Website</option>
-                                                                        <option value="Software Developer"> Software Developer</option>
-                                                                        </select>
-                                                                        <div class="invalid-feedback">
-                                                                        Select Leads Catagories
-                                                                        </div>
-                                                                   </div>
-                                                                </div>
-                                                        </div>
-                                                        <div class="row">
-                                                               <div class="col-lg-6">
-                                                                  <div class="mb-3">
-                                                                        <label for="title"  class="form-label text-muted">Contact Person Name <span class="text-danger">*</span></label>
-                                                                        <input type="text" class="form-control" id="person name" placeholder="Enter Contact Person Name" required="">
-                                                                        <div class="invalid-feedback">
-                                                                        Please enter Contact Person Name
-                                                                        </div>
-                                                                    </div>
-                                                               </div>
-                                                               <div class="col-lg-6">
-                                                                   <div class="mb-3">
-                                                                        <label for="phone"  class="form-label text-muted">Contact Person Phone<span class="text-danger">*</span></label>
-                                                                        <input type="text" class="form-control" id="Contact" placeholder="Enter Contact Person Phone" required="">
-                                                                        <div class="invalid-feedback">
-                                                                        Please enter Contact Person Phone
-                                                                        </div>
-                                                                    </div>
-                                                               </div>
-                                                        </div>
-                                                        <div class="row">
-                                                               <div class="col-lg-6">
-                                                                        <div class="mb-3">
-                                                                            <label for="designation" class="form-label text-muted">Contact Person Designation<span class="text-danger">*</span></label>
-                                                                            <select class="form-control" id="designation" required="">
-                                                                            
-                                                                            <option value="" selected="true" disabled="disabled">Select Designation </option>
-                                                                            <option value="1">Designation 1</option>
-                                                                            <option value="2">Designation 2</option>
-                                                                            </select>
-                                                                            <div class="invalid-feedback">
-                                                                            select Contact Person Designation
-                                                                            </div>
-                                                                            
-                                                                        </div>
-                                                               </div>
-                                                               <div class="col-lg-6">
-                                                                    <div class="mb-3">
-                                                                        <label for="designation" class="form-label text-muted">Intrest Rate<span class="text-danger">*</span></label>
-                                                                        <select class="form-control" id="branch" required="">
-                                                                        
-                                                                        <option value="" selected="true" disabled="disabled">Select Rate </option>
-                                                                        <option value="1"> 1</option>
-                                                                        <option value="2"> 2</option>
-                                                                        <option value="3"> 3</option>
-                                                                        <option value="4"> 4</option>
-                                                                        <option value="5"> 5</option>
-                                                                        </select>
-                                                                        <div class="invalid-feedback">
-                                                                        Select Intrest Rate
-                                                                        </div>
-                                                                        
-                                                                    </div>
-                                                               </div>
-
-                                                        </div>
-                                                        <div class="row">
-                                                              <div class="col-lg-6">
-                                                                <div class="mb-3">
-                                                                    <label for="title"  class="form-label text-muted">Business Person Name <span class="text-danger">*</span></label>
-                                                                    <input type="text" class="form-control" id="person name" placeholder="Enter Business Person Name" required="">
-                                                                    <div class="invalid-feedback">
-                                                                    Please enter Business Person Name
-                                                                    </div>
-                                                                </div>
-                                                              </div>
-                                                              <div class="col-lg-6">
-                                                                <div class="mb-3">
-                                                                    <label for="phone"  class="form-label text-muted">Business Person Phone<span class="text-danger">*</span></label>
-                                                                    <input type="text" class="form-control" id="Contact" placeholder="Enter Business Person Phone" required="">
-                                                                    <div class="invalid-feedback">
-                                                                    Please enter Business Person Phone
-                                                                    </div>
-                                                                </div>
-                                                              </div>
-                                                        </div>
-                                                        <div class="mb-3">
-                                                            <label  class="form-label text-muted" for="address">Business Address<span class="text-danger">*</span></label>
-                                                            <textarea class="form-control" id="address" required=""></textarea>
-                                                            <div class="invalid-feedback">
-                                                            Please enter Business Address
-                                                            </div>
-                                                        </div>
-                                                        <div class="row">
-                                                               <div class="col-lg-6">
-                                                                    <div class="mb-3">
-                                                                        <label for="title"  class="form-label text-muted">Lead Title <span class="text-danger">*</span></label>
-                                                                        <input type="text" class="form-control" id="lead" placeholder="Enter Lead Title" required="">
-                                                                        <div class="invalid-feedback">
-                                                                        Please enter Lead Title
-                                                                        </div>
-                                                                    </div>
-                                                               </div>
-                                                               <div class="col-lg-6">
-                                                                        <label for="autoCompleteCars"  class="form-label text-muted">Lead Status<span class="text-danger">*</span></label>
-                                                                        <select class="form-control" id="Status" required="">
-                                                                        
-                                                                        <option value="" selected="true" disabled="disabled">Select Rate </option>
-                                                                        <option value="open"> OPen</option>
-                                                                        <option value="Running"> Running</option>
-                                                                        <option value="Fresh"> Fresh</option>
-                                                                        </select>
-                                                                        <div class="invalid-feedback">
-                                                                        Select status
-                                                                        </div>
-                                                               </div>
-                                                        </div>
-                                                        <div class="mb-3">
-                                                            <label for="Description"  class="form-label text-muted">Leads Description <span class="text-danger">*</span></label>
-                                                            <textarea class="form-control"></textarea>
-                                                            <div class="invalid-feedback">
-                                                            Please enter Leads Description
-                                                            </div>
-                                                        </div>
-                                                        <div class="row mb-3">
-                                                            <div class="col-lg-6">
-                                                                    <label for="autoCompleteFruit" class="form-label text-muted">Lead generated Date</label>
-                                                                    <input type="date" class="form-control" id=" generated Date" required="">
-                                                                    <div class="invalid-feedback">
-                                                                    Please enter Lead generated Date
-                                                                    </div>
-                                                            
-                                                            </div>
-                                                       
-                                                            <div class="col-lg-6">
-                                                                    <label for="autoCompleteCars"  class="form-label text-muted">Next Follow Up Date</label>
-                                                                    <input type="date" class="form-control" id="Follow Up Date" required="">
-                                                                    <div class="invalid-feedback">
-                                                                    Please enter Follow Up Date
-                                                                    </div>
-                                                            </div>
-                                                       
-                                                        </div>
-                                                        <!-- end row -->
-                                                        <div class="row mb-3">
-                                                            <div class="col-lg-6">   
-                                                                <label for="autoCompleteFruit"  class="form-label text-muted">Min Price</label>
-                                                                <input type="number" class="form-control" id="Min Price" required="">
-                                                                <div class="invalid-feedback">
-                                                                Please enter Min Price
-                                                                </div>  
-                                                            </div>
-                                                             <div class="col-lg-6">
-                                                                   
-                                                                    <label for="autoCompleteCars"  class="form-label text-muted">Max Price<span class="text-danger">*</span></label>
-                                                                    <input type="number" class="form-control" id="Max Price" required="">
-                                                                    <div class="invalid-feedback">
-                                                                    Please enter Max Price
-                                                                    </div>
-                                                                    
-                                                            </div>
-                                                        <!-- end col -->
-                                                        </div>
-                                                        <!-- end row -->
-                                                        <div id="password-contain" class="p-3 bg-light mb-2 rounded">
-                                                        <h5 class="fs-13">Password must contain:</h5>
-                                                        <p id="pass-length" class="invalid fs-12 mb-2">Minimum <b>8 characters</b></p>
-                                                        <p id="pass-lower" class="invalid fs-12 mb-2">At <b>lowercase</b> letter (a-z)</p>
-                                                        <p id="pass-upper" class="invalid fs-12 mb-2">At least <b>uppercase</b> letter (A-Z)</p>
-                                                        <p id="pass-number" class="invalid fs-12 mb-0">A least <b>number</b> (0-9)</p>
-                                                        </div>
-                                                        
-                                                        <div class="mt-4 text-center">
-                                                        <button type="button" class="btn w-sm btn-light" data-bs-dismiss="modal">Close</button>
-                                                        <button class="btn btn-success w-sm " type="submit">Create</button>
-                                                        </div>
-                                                        
-                                                        <!-- <div class="mt-4 text-center">
-                                                        <div class="signin-other-title">
-                                                        <h5 class="fs-13 mb-4 title text-muted">Create account with</h5>
-                                                        </div>
-                                                        
-                                                        <div>
-                                                        <button type="button" class="btn btn-primary btn-icon waves-effect waves-light"><i class="ri-facebook-fill fs-16"></i></button>
-                                                        <button type="button" class="btn btn-danger btn-icon waves-effect waves-light"><i class="ri-google-fill fs-16"></i></button>
-                                                        <button type="button" class="btn btn-dark btn-icon waves-effect waves-light"><i class="ri-github-fill fs-16"></i></button>
-                                                        <button type="button" class="btn btn-info btn-icon waves-effect waves-light"><i class="ri-twitter-fill fs-16"></i></button>
-                                                        </div>
-                                                        </div> -->
-                                                    </form>
-                                                </div>    
+                                        <div class="modal-dialog">
+                                            <div class="modal-content mt-4">
+                                            
+                                            <!-- Modal Header -->
+                                            <div class="modal-header1 ">
+                                            
+                                            <button type="button" class="btn-close btn-light bg-soft-light float-end mt-2" data-bs-dismiss="modal"></button>
                                             </div>
-                                        </div>
+                                            
+                                            <!-- Modal body -->
+                                            <div class="modal-body">
+                                            
+                                            <div class="auth-page-wrapper pt-5">
+                                            <!-- auth page bg -->
+                                            
+                                            
+                                            <!-- auth page content -->
+                                            <div class="auth-page-content">
+                                            <div class="container">
+                                            
+                                            <!-- end row -->
+                                            
+                                            <div class="row justify-content-center">
+                                            <div class="col-md-12 col-lg-12 col-xl-12">
+                                            <div class="card1 mt-4" id="cardmodal">
+                                            <div class="text-center mt-sm-5 mb-2 text-white-50">
+                                            <div>
+                                            
+                                         
+                                            </div>
+                                            
+                                            </div>
+                                            <div class="cardbody p-4">
+                                            <div class="text-center mt-2">
+                                            <h5 class="text-primary"> Create State</h5>
+                                            
+                                            </div>
+                                            <div class="p-2 mt-4">
+                                                <form action="#" method="post">
+                                                    <div class="row">
+                                                          <div class="col-sm-12">
+                                                            <input type="text" name="state" class="form-control" placeholder="Enter State">
+                                                          </div>
+                                                          <div class="col-sm-12 mt-3 text-center">
+                                                            <input type="submit" class="btn btn-danger" value="Add" >
+                                                          </div>
+                                                    </div>
+                                                </form>
+                                            
+                                            </div>
+                                            </div>
+                                            <!-- end card body -->
+                                            </div>
+                                            <!-- end card -->
+                                            
+                                           
+                                            </div>
+                                            </div>
+                                            <!-- end row -->
+                                            </div>
+                                            <!-- end container -->
+                                            </div>
+                                           
+                                            </div>
+                                            </div>
+                                            
+                                           
                                     </div>
                                     <!--end modal-->
 
@@ -1443,109 +1115,6 @@
                                     <!--end modal -->
 
 
-                                    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
-                                        <div class="offcanvas-header bg-light">
-                                            <h5 class="offcanvas-title" id="offcanvasExampleLabel">Leads Fliters</h5>
-                                            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-                                        </div>
-                                        <!--end offcanvas-header-->
-                                        <form action="#" class="d-flex flex-column justify-content-end h-100" id="myForm">
-                                            <div class="offcanvas-body">
-                                                <div class="mb-4">
-                                                    <label for=" LeadTitle" class="form-label text-muted text-uppercase fw-semibold mb-3">Lead Title</label>
-                                                    <input type="text" class="form-control"  placeholder="Enter Lead Title">
-                                                </div>
-                                                <div class="mb-4">
-                                                    <label for=" PersonName" class="form-label text-muted text-uppercase fw-semibold mb-3">Contact Person Name </label>
-                                                    <input type="text" class="form-control"  placeholder="Enter Contact Person Name">
-                                                </div>
-                                                <div class="mb-4">
-                                                    <label for=" PersonPhone" class="form-label text-muted text-uppercase fw-semibold mb-3">Contact Person Phone </label>
-                                                    <input type="text" class="form-control"  placeholder="Enter Contact Person Phone">
-                                                </div>
-                                                <div class="mb-4">
-                                                    <label for=" intrestrate" class="form-label text-muted text-uppercase fw-semibold mb-3">Intrest rate </label>
-                                                    <select class="form-control">
-                                                            <option value="" selected="true" disabled="disabled">Select The Rate</option>
-                                                            <option value="1" >1</option>
-                                                            <option value="2">2</option>
-                                                            <option value="3">3</option>
-                                                            <option value="4">4</option>
-                                                            <option value="5">5</option>
-                                                    </select>
-                                                </div>
-                                                <div class="mb-4">
-                                                   
-                                                    <div class="row g-2 align-items-center">
-                                                        <div class="col-lg">
-                                                            <label for="fromdate" class="form-label text-muted text-uppercase fw-semibold mb-3">From</label>
-                                                            <input type="date" class="form-control" id="datepicker">
-                                                        </div>
-                                                        
-                                                        <div class="col-lg">
-                                                            <label for="todate" class="form-label text-muted text-uppercase fw-semibold mb-3">TO</label>
-                                                            <input type="date" class="form-control" id="datepicker">
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="mb-4">
-                                                   
-                                                    <div class="row g-2 align-items-center">
-                                                        <div class="col-lg">
-                                                            <label for="minprice" class="form-label text-muted text-uppercase fw-semibold mb-3">Min Price</label>
-                                                            <input type="number" class="form-control" id="leadscore" placeholder="0">
-                                                        </div>
-                                                        
-                                                        <div class="col-lg">
-                                                            <label for="maxprice" class="form-label text-muted text-uppercase fw-semibold mb-3">Max Price</label>
-                                                            <input type="number" class="form-control" id="leadscore" placeholder="0">
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="mb-4">
-                                                   
-                                                    <div class="row g-2 align-items-center">
-                                                        <div class="col-lg-6">
-                                                            <label for=" intrestrate" class="form-label text-muted text-uppercase fw-semibold mb-3">Lead Status </label>
-                                                            <select class="form-control">
-                                                                    <option value="" selected="true" disabled="disabled">Select Lead Status</option>
-                                                                    <option value="fresh" >fresh</option>
-                                                                    <option value="open">open</option>
-                                                                    <option value="Running">Running</option>
-                                                                    
-                                                            </select>
-                                                        </div>
-                                                        
-                                                        <div class="col-lg-6">
-                                                            <label for=" intrestrate" class="form-label text-muted text-uppercase fw-semibold mb-3">Lead Catergory </label>
-                                                            <select class="form-control">
-                                                                    <option value="" selected="true" disabled="disabled">Select Lead Catergory </option>
-                                                                    <option value="Web Developer" >Web Developer</option>
-                                                                    <option value="Web Designer">Web Designer</option>
-                                                                    <option value="SEO">SEO</option>
-                                                                    <option value="DigitalMarketing">Digital Marketing</option>
-                                                                    <option value="Graphic Designer">Graphic Designer</option>
-                                                            </select>
-                                                        </div>
-                                                    </div>
-                                                    <div class="mt-4">
-                                                        <div class="row g-2 align-items-center justify-content-center">
-                                                            <input type="button" class="btn btn-primary w-50"  onclick="resetForm();" value="Reset"> 
-                                                             <input type="button" class="btn btn-primary w-50"  value="Search">
-                                                             
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            
-                                            </div>
-                                            <!--end offcanvas-body-->
-                                            <div class="offcanvas-footer border-top p-3 text-center hstack gap-2">
-                                                <button class="btn btn-light w-100">Clear Filter</button>
-                                                <button type="submit" class="btn btn-success w-100">Filters</button>
-                                            </div>
-                                            <!--end offcanvas-footer-->
-                                        </form>
-                                    </div>
                                     <!--end offcanvas-->
 
                                 </div>
@@ -1556,11 +1125,646 @@
                     </div>
                     <!--end row-->
 
+                       </div>
+                       <div class="col-lg-4">
+                        <div class="card" id="leadsList">
+                            <div class="card-title bg-soft-primary"><h3 class="text-center mt-1">District</h3></div>
+                            <div class="card-header border-0">
+                             
+                                <div class="row g-4 align-items-center">
+                                    <div class="col-sm-6">
+                                        <select class  ="form-control" name="state" id="maxRows1">
+                                            <option value="5000">Show ALL Rows</option>
+                                            <option value="5">5</option>
+                                            <option value="10">10</option>
+                                            <option value="15">15</option>
+                                            <option value="20">20</option>
+                                            <option value="50">50</option>
+                                            <option value="70">70</option>
+                                            <option value="100">100</option>
+                                           </select>
+                                    </div>
+                                  <div class="col-sm-auto col-sm-6 ms-auto">
+                                        <div class="hstack gap-2">
+                                            <button class="btn btn-soft-danger" id="remove-actions" onClick="deleteMultiple()"><i class="ri-delete-bin-2-line"></i></button>
+                                        
+                                            <button type="button" class="btn btn-success add-btn" data-bs-toggle="modal" id="create-btn" data-bs-target="#showModal1"><i class="ri-add-line align-bottom me-1"></i> Add </button>
+                                      
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row mt-2">
+                                    <div class="col-lg-12">
+                                        <input id="search1" type="text" class="form-control"  placeholder="Search for .....">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                
+                                <div>
+                                    <div class="table-responsive table-card">
+                                       
+                                      <table class="table " id= "table-id1">
+                                            <thead class="table-light">
+                                                <tr>
+                                                   
+                                                    <th class="sort" data-sort="name">District</th>
+                                                  
+                                                    <th class="sort" data-sort="phone">Action</th>
+                                                    
+                                                   
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                   
+                                                    
+                                                  
+                                                    <td class="name">Kaniyakumari</td>
+                                                    <td>
+                                                     
+                                                          <i class="fa fa-edit"></i>Edit
+                                                          <i class="fa"></i>delete
+                                                       
+                                                  </td>
+                                                   
+                                                </tr>
+                                                <tr>
+                                                   
+                                                    <td class="id" style="display:none;"><a href="javascript:void(0);" class="fw-medium link-primary">#VZ2101</a></td>
+                                                  
+                                                    <td class="name">Chennai</td>
+                                                    <td>
+                                                        <ul>
+                                                           <li><i class="fa"></i>Edit </li>
+                                                           <li><i class="fa"></i>delete </li>
+                                                       </ul>
+                                                  </td>
+                                                   
+                                                </tr>
+                                                <tr>
+                                                    
+                                                    <td class="id" style="display:none;"><a href="javascript:void(0);" class="fw-medium link-primary">#VZ2101</a></td>
+                                                  
+                                                    <td class="name">Kollam</td>
+                                                    <td>
+                                                        <ul>
+                                                           <li><i class="fa"></i>Edit </li>
+                                                           <li><i class="fa"></i>delete </li>
+                                                       </ul>
+                                                  </td>
+                                                   
+                                                </tr>
+                                                <tr>
+                                                    
+                                                    <td class="id" style="display:none;"><a href="javascript:void(0);" class="fw-medium link-primary">#VZ2101</a></td>
+                                                  
+                                                    <td class="name">Waynad</td>
+                                                    <td>
+                                                        <ul>
+                                                           <li><i class="fa"></i>Edit </li>
+                                                           <li><i class="fa"></i>delete </li>
+                                                       </ul>
+                                                  </td>
+                                                   
+                                                </tr>
+                                                <tr>
+                                                   
+                                                    <td class="id" style="display:none;"><a href="javascript:void(0);" class="fw-medium link-primary">#VZ2101</a></td>
+                                                  
+                                                    <td class="name">Kottayam</td>
+                                                    <td>
+                                                        <ul>
+                                                           <li><i class="fa"></i>Edit </li>
+                                                           <li><i class="fa"></i>delete </li>
+                                                       </ul>
+                                                  </td>
+                                                   
+                                                </tr>
+                                                <tr>
+                                                    
+                                                    <td class="id" style="display:none;"><a href="javascript:void(0);" class="fw-medium link-primary">#VZ2101</a></td>
+                                                  
+                                                    <td class="name">Thiruvanathapuram</td>
+                                                    <td>
+                                                        <ul>
+                                                           <li><i class="fa"></i>Edit </li>
+                                                           <li><i class="fa"></i>delete </li>
+                                                       </ul>
+                                                  </td>
+                                                   
+                                                </tr>
+                                                <tr>
+                                                   
+                                                    
+                                                  
+                                                    <td class="name">Kaniyakumari</td>
+                                                    <td>
+                                                     
+                                                          <i class="fa fa-edit"></i>Edit
+                                                          <i class="fa"></i>delete
+                                                       
+                                                  </td>
+                                                   
+                                                </tr>
+                                                <tr>
+                                                   
+                                                    <td class="id" style="display:none;"><a href="javascript:void(0);" class="fw-medium link-primary">#VZ2101</a></td>
+                                                  
+                                                    <td class="name">Chennai</td>
+                                                    <td>
+                                                        <ul>
+                                                           <li><i class="fa"></i>Edit </li>
+                                                           <li><i class="fa"></i>delete </li>
+                                                       </ul>
+                                                  </td>
+                                                   
+                                                </tr>
+                                                <tr>
+                                                    
+                                                    <td class="id" style="display:none;"><a href="javascript:void(0);" class="fw-medium link-primary">#VZ2101</a></td>
+                                                  
+                                                    <td class="name">Kollam</td>
+                                                    <td>
+                                                        <ul>
+                                                           <li><i class="fa"></i>Edit </li>
+                                                           <li><i class="fa"></i>delete </li>
+                                                       </ul>
+                                                  </td>
+                                                   
+                                                </tr>
+                                                <tr>
+                                                    
+                                                    <td class="id" style="display:none;"><a href="javascript:void(0);" class="fw-medium link-primary">#VZ2101</a></td>
+                                                  
+                                                    <td class="name">Waynad</td>
+                                                    <td>
+                                                        <ul>
+                                                           <li><i class="fa"></i>Edit </li>
+                                                           <li><i class="fa"></i>delete </li>
+                                                       </ul>
+                                                  </td>
+                                                   
+                                                </tr>
+                                                <tr>
+                                                   
+                                                    <td class="id" style="display:none;"><a href="javascript:void(0);" class="fw-medium link-primary">#VZ2101</a></td>
+                                                  
+                                                    <td class="name">Kottayam</td>
+                                                    <td>
+                                                        <ul>
+                                                           <li><i class="fa"></i>Edit </li>
+                                                           <li><i class="fa"></i>delete </li>
+                                                       </ul>
+                                                  </td>
+                                                   
+                                                </tr>
+                                                <tr>
+                                                    
+                                                    <td class="id" style="display:none;"><a href="javascript:void(0);" class="fw-medium link-primary">#VZ2101</a></td>
+                                                  
+                                                    <td class="name">Thiruvanathapuram</td>
+                                                    <td>
+                                                        <ul>
+                                                           <li><i class="fa"></i>Edit </li>
+                                                           <li><i class="fa"></i>delete </li>
+                                                       </ul>
+                                                  </td>
+                                                   
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                       
+                                        </div>
+                                        </div>
+                                <div class="modal fade" id="showModal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                        
+                                        <!-- Modal Header -->
+                                        <div class="modal-header1">
+                                        
+                                        <button type="button" class="btn-close btn-light bg-soft-light float-end "data-bs-dismiss="modal"></button>
+                                        </div>
+                                        
+                                        <!-- Modal body -->
+                                        <div class="modal-body">
+                                        
+                                        <div class="auth-page-wrapper pt-5">
+                                        <!-- auth page bg -->
+                                        
+                                        
+                                        <!-- auth page content -->
+                                        <div class="auth-page-content">
+                                        <div class="container">
+                                        
+                                        <!-- end row -->
+                                        
+                                        <div class="row justify-content-center">
+                                        <div class="col-md-12 col-lg-12 col-xl-12">
+                                        <div class="card1 mt-4" id="cardmodal">
+                                        <div class="text-center mt-sm-5 mb-2 text-white-50">
+                                        <div>
+                                            <h5 class="text-primary"> Create District</h5>
+                                        </a>
+                                        </div>
+                                        
+                                        </div>
+                                        <div class="cardbody p-4">
+                                        
+                                        <div class="p-2 mt-4">
+                                            <form action="#" method="post">
+                                                <div class="row">
+                                                       <div class="col-sm-12">
+                                                             <input type="text" name="district" class="form-control" placeholder="Enter District">
+                                                       </div>
+                                                       <div class="col-sm-12 mt-3 text-center">
+                                                        <input type="submit"  class="btn btn-danger" value="Add">
+                                                  </div>
+                                                </div>
+                                            </form>
+                                        
+                                        </div>
+                                        </div>
+                                        <!-- end card body -->
+                                        </div>
+                                        <!-- end card -->
+
+                                        
+                                        </div>
+                                        </div>
+                                        <!-- end row -->
+                                        </div>
+                                        <!-- end container -->
+                                        </div>
+                                        
+                                        </div>
+                                        </div>
+                                        
+                                        <!-- Modal footer -->
+                                       
+                                        
+                                </div>
+                                <!--end modal-->
+
+                                <!-- Modal -->
+                                <div class="modal fade zoomIn" id="deleteRecordModal" tabindex="-1" aria-labelledby="deleteRecordLabel" aria-hidden="true">
+                                    <div class="modal-dialog modal-dialog-centered">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" id="btn-close"></button>
+                                            </div>
+                                            <div class="modal-body p-5 text-center">
+                                                <lord-icon src="https://cdn.lordicon.com/gsqxdxog.json" trigger="loop" colors="primary:#405189,secondary:#f06548" style="width:90px;height:90px"></lord-icon>
+                                                <div class="mt-4 text-center">
+                                                    <h4 class="fs-semibold">You are about to delete a lead ?</h4>
+                                                    <p class="text-muted fs-14 mb-4 pt-1">Deleting your lead will remove all of your information from our database.</p>
+                                                    <div class="hstack gap-2 justify-content-center remove">
+
+                                                        <button class="btn btn-link link-success fw-medium text-decoration-none" id="deleteRecord-close" data-bs-dismiss="modal"><i class="ri-close-line me-1 align-middle"></i> Close</button>
+                                                        <button class="btn btn-danger" id="delete-record">Yes, Delete It!!</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--end modal -->
+
+
+                                <!--end offcanvas-->
+
+                            </div>
+                        </div>
+
+                    </div>
+                    <!--end col-->
                 </div>
+                <!--end row-->
+
+                      </div>
+                      <div class="col-lg-4">
+                        <div class="card" id="leadsList">
+                            <div class="card-title bg-soft-primary"><h3 class="text-center mt-1">Place</h3></div>
+                            <div class="card-header border-0">
+                             
+                                <div class="row g-4 align-items-center">
+                                    <div class="col-sm-6">
+                                        <select class  ="form-control" name="state" id="maxRows2">
+                                            <option value="5000">Show ALL Rows</option>
+                                            <option value="5">5</option>
+                                            <option value="10">10</option>
+                                            <option value="15">15</option>
+                                            <option value="20">20</option>
+                                            <option value="50">50</option>
+                                            <option value="70">70</option>
+                                            <option value="100">100</option>
+                                           </select>
+                                    </div>
+                                  <div class="col-sm-auto col-sm-6 ms-auto">
+                                        <div class="hstack gap-2">
+                                            <button class="btn btn-soft-danger" id="remove-actions" onClick="deleteMultiple()"><i class="ri-delete-bin-2-line"></i></button>
+                                        
+                                            <button type="button" class="btn btn-success add-btn" data-bs-toggle="modal" id="create-btn" data-bs-target="#showModal2"><i class="ri-add-line align-bottom me-1"></i> Add </button>
+                                      
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row mt-2">
+                                    <div class="col-lg-12">
+                                        <input id="search2" type="text" class="form-control"  placeholder="Search for .....">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                
+                                <div>
+                                    <div class="table-responsive table-card">
+                                       
+                                      <table class="table " id= "table-id2">
+                                            <thead class="table-light">
+                                                <tr>
+                                                   
+                                                    <th class="sort" data-sort="name">Place</th>
+                                                  
+                                                    <th class="sort" data-sort="phone">Action</th>
+                                                    
+                                                   
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                   
+                                                    
+                                                  
+                                                    <td class="name">Nagercoil</td>
+                                                    <td>
+                                                     
+                                                          <i class="fa fa-edit"></i>Edit
+                                                          <i class="fa"></i>delete
+                                                       
+                                                  </td>
+                                                   
+                                                </tr>
+                                                <tr>
+                                                   
+                                                    <td class="id" style="display:none;"><a href="javascript:void(0);" class="fw-medium link-primary">#VZ2101</a></td>
+                                                  
+                                                    <td class="name">Chennai</td>
+                                                    <td>
+                                                        <ul>
+                                                           <li><i class="fa"></i>Edit </li>
+                                                           <li><i class="fa"></i>delete </li>
+                                                       </ul>
+                                                  </td>
+                                                   
+                                                </tr>
+                                                <tr>
+                                                    
+                                                    <td class="id" style="display:none;"><a href="javascript:void(0);" class="fw-medium link-primary">#VZ2101</a></td>
+                                                  
+                                                    <td class="name">Kollam</td>
+                                                    <td>
+                                                        <ul>
+                                                           <li><i class="fa"></i>Edit </li>
+                                                           <li><i class="fa"></i>delete </li>
+                                                       </ul>
+                                                  </td>
+                                                   
+                                                </tr>
+                                                <tr>
+                                                    
+                                                    <td class="id" style="display:none;"><a href="javascript:void(0);" class="fw-medium link-primary">#VZ2101</a></td>
+                                                  
+                                                    <td class="name">Waynad</td>
+                                                    <td>
+                                                        <ul>
+                                                           <li><i class="fa"></i>Edit </li>
+                                                           <li><i class="fa"></i>delete </li>
+                                                       </ul>
+                                                  </td>
+                                                   
+                                                </tr>
+                                                <tr>
+                                                   
+                                                    <td class="id" style="display:none;"><a href="javascript:void(0);" class="fw-medium link-primary">#VZ2101</a></td>
+                                                  
+                                                    <td class="name">Kottayam</td>
+                                                    <td>
+                                                        <ul>
+                                                           <li><i class="fa"></i>Edit </li>
+                                                           <li><i class="fa"></i>delete </li>
+                                                       </ul>
+                                                  </td>
+                                                   
+                                                </tr>
+                                                <tr>
+                                                    
+                                                    <td class="id" style="display:none;"><a href="javascript:void(0);" class="fw-medium link-primary">#VZ2101</a></td>
+                                                  
+                                                    <td class="name">Thiruvanathapuram</td>
+                                                    <td>
+                                                        <ul>
+                                                           <li><i class="fa"></i>Edit </li>
+                                                           <li><i class="fa"></i>delete </li>
+                                                       </ul>
+                                                  </td>
+                                                   
+                                                </tr>
+                                                <tr>
+                                                   
+                                                    
+                                                  
+                                                    <td class="name">Kaniyakumari</td>
+                                                    <td>
+                                                     
+                                                          <i class="fa fa-edit"></i>Edit
+                                                          <i class="fa"></i>delete
+                                                       
+                                                  </td>
+                                                   
+                                                </tr>
+                                                <tr>
+                                                   
+                                                    <td class="id" style="display:none;"><a href="javascript:void(0);" class="fw-medium link-primary">#VZ2101</a></td>
+                                                  
+                                                    <td class="name">Chennai</td>
+                                                    <td>
+                                                        <ul>
+                                                           <li><i class="fa"></i>Edit </li>
+                                                           <li><i class="fa"></i>delete </li>
+                                                       </ul>
+                                                  </td>
+                                                   
+                                                </tr>
+                                                <tr>
+                                                    
+                                                    <td class="id" style="display:none;"><a href="javascript:void(0);" class="fw-medium link-primary">#VZ2101</a></td>
+                                                  
+                                                    <td class="name">Kollam</td>
+                                                    <td>
+                                                        <ul>
+                                                           <li><i class="fa"></i>Edit </li>
+                                                           <li><i class="fa"></i>delete </li>
+                                                       </ul>
+                                                  </td>
+                                                   
+                                                </tr>
+                                                <tr>
+                                                    
+                                                    <td class="id" style="display:none;"><a href="javascript:void(0);" class="fw-medium link-primary">#VZ2101</a></td>
+                                                  
+                                                    <td class="name">Waynad</td>
+                                                    <td>
+                                                        <ul>
+                                                           <li><i class="fa"></i>Edit </li>
+                                                           <li><i class="fa"></i>delete </li>
+                                                       </ul>
+                                                  </td>
+                                                   
+                                                </tr>
+                                                <tr>
+                                                   
+                                                    <td class="id" style="display:none;"><a href="javascript:void(0);" class="fw-medium link-primary">#VZ2101</a></td>
+                                                  
+                                                    <td class="name">Kottayam</td>
+                                                    <td>
+                                                        <ul>
+                                                           <li><i class="fa"></i>Edit </li>
+                                                           <li><i class="fa"></i>delete </li>
+                                                       </ul>
+                                                  </td>
+                                                   
+                                                </tr>
+                                                <tr>
+                                                    
+                                                    <td class="id" style="display:none;"><a href="javascript:void(0);" class="fw-medium link-primary">#VZ2101</a></td>
+                                                  
+                                                    <td class="name">Thiruvanathapuram</td>
+                                                    <td>
+                                                        <ul>
+                                                           <li><i class="fa"></i>Edit </li>
+                                                           <li><i class="fa"></i>delete </li>
+                                                       </ul>
+                                                  </td>
+                                                   
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                       
+                                        </div>
+                                        </div>
+                                <div class="modal fade" id="showModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                        
+                                        <!-- Modal Header -->
+                                        <div class="modal-header1">
+                                        
+                                        <button type="button" class="btn-close btn-light bg-soft-light float-end" data-bs-dismiss="modal"></button>
+                                        </div>
+                                        
+                                        <!-- Modal body -->
+                                        <div class="modalbody">
+                                        
+                                        <div class="auth-page-wrapper ">
+                                        <!-- auth page bg -->
+                                       
+                                        
+                                        <!-- auth page content -->
+                                        <div class="auth-page-content">
+                                        <div class="container">
+                                        
+                                        <!-- end row -->
+                                        
+                                        <div class="row justify-content-center">
+                                        <div class="col-md-12 col-lg-12 col-xl-12">
+                                        <div class="card1 mt-4" id="cardmodal">
+                                        <div class="text-center mt-sm-5 mb-2 text-white-50">
+                                        <div>
+                                            <h5 class="text-primary"> Create Place</h5>
+                                        </div>
+                                        
+                                        </div>
+                                        <div class="cardbody p-4">
+                                        
+                                        <div class="p-2 mt-4">
+                                            <form action="#" method="post">
+                                                <div class="row">
+                                                    <div class="col-sm-12">
+                                                           <input type="text" name="Place" class="form-control" placeholder="Enter Place">
+                                                    </div>
+                                                    <div class="col-sm-12 text-center mt-3">
+                                                        <input type="submit" class="btn btn-danger" value="Add" >
+                                                 </div>
+
+                                                </div>
+                                            </form>
+                                        
+                                        </div>
+                                        </div>
+                                        <!-- end card body -->
+                                        </div>
+                                        
+                                        
+                                        </div>
+                                        </div>
+                                        <!-- end row -->
+                                        </div>
+                                        <!-- end container -->
+                                        </div>
+                                        <!-- end auth page content -->
+                                      
+                                        </div>
+                                        </div>
+                                        
+                                        <!-- Modal footer -->
+                                       
+                                        
+                                </div>
+                                <!--end modal-->
+
+                                <!-- Modal -->
+                                <div class="modal fade zoomIn" id="deleteRecordModal" tabindex="-1" aria-labelledby="deleteRecordLabel" aria-hidden="true">
+                                    <div class="modal-dialog modal-dialog-centered">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" id="btn-close"></button>
+                                            </div>
+                                            <div class="modal-body p-5 text-center">
+                                                <lord-icon src="https://cdn.lordicon.com/gsqxdxog.json" trigger="loop" colors="primary:#405189,secondary:#f06548" style="width:90px;height:90px"></lord-icon>
+                                                <div class="mt-4 text-center">
+                                                    <h4 class="fs-semibold">You are about to delete a lead ?</h4>
+                                                    <p class="text-muted fs-14 mb-4 pt-1">Deleting your lead will remove all of your information from our database.</p>
+                                                    <div class="hstack gap-2 justify-content-center remove">
+
+                                                        <button class="btn btn-link link-success fw-medium text-decoration-none" id="deleteRecord-close" data-bs-dismiss="modal"><i class="ri-close-line me-1 align-middle"></i> Close</button>
+                                                        <button class="btn btn-danger" id="delete-record">Yes, Delete It!!</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--end modal -->
+
+
+                                <!--end offcanvas-->
+
+                            </div>
+                        </div>
+
+                    </div>
+                    <!--end col-->
+                </div>
+                <!--end row-->
+
+                      </div>
+                       
+                      
                 <!-- container-fluid -->
             </div>
             <!-- End Page-content -->
-
             <footer class="footer">
                 <div class="container">
                     <div class="row">
@@ -1574,6 +1778,7 @@
                     </div>
                 </div>
             </footer>
+            
         </div>
     </div>
     <!-- END layout-wrapper -->
@@ -2265,11 +2470,6 @@
     </div>
 
     <!-- JAVASCRIPT -->
-    <script>
-        function resetForm() {
-            document.getElementById("myForm").reset();
-        }
-        </script>
     <script src="assets/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="assets/libs/simplebar/simplebar.min.js"></script>
     <script src="assets/libs/node-waves/waves.min.js"></script>
@@ -2277,17 +2477,433 @@
     <script src="assets/js/pages/plugins/lord-icon-2.1.0.js"></script>
     <script src="assets/js/plugins.js"></script>
 
-    <!-- list.js min js -->
     <script src="assets/libs/list.js/list.min.js"></script>
     <script src="assets/libs/list.pagination.js/list.pagination.min.js"></script>
 
-    <!-- Sweet Alerts js -->
+ 
     <script src="assets/libs/sweetalert2/sweetalert2.min.js"></script>
-    <!-- crm leads init -->
-    <script src="assets/js/pages/crm-leads.init.js"></script>
 
-    <!-- App js -->
+ 
+
+   
     <script src="assets/js/app.js"></script>
+    <script>
+        getPagination('#table-id2');
+  
+
+  function getPagination(table) {
+    var lastPage = 1;
+  
+    $('#maxRows2')
+      .on('change', function(evt) {
+        //$('.paginationprev').html('');						// reset pagination
+  
+       lastPage = 1;
+        $('#pagination1')
+          .find('li')
+          .slice(1, -1)
+          .remove();
+        var trnum = 0; // reset tr counter
+        var maxRows = parseInt($(this).val()); // get Max Rows from select option
+  
+        if (maxRows1 == 5000) {
+          $('#pagination1').hide();
+        } else {
+          $('#pagination1').show();
+        }
+  
+        var totalRows = $(table + ' tbody tr').length; // numbers of rows
+        $(table + ' tr:gt(0)').each(function() {
+          // each TR in  table and not the header
+          trnum++; // Start Counter
+          if (trnum > maxRows) {
+            // if tr number gt maxRows
+  
+            $(this).hide(); // fade it out
+          }
+          if (trnum <= maxRows) {
+            $(this).show();
+          } // else fade in Important in case if it ..
+        }); //  was fade out to fade it in
+        if (totalRows > maxRows) {
+          // if tr total rows gt max rows option
+          var pagenum = Math.ceil(totalRows / maxRows); // ceil total(rows/maxrows) to get ..
+          //	numbers of pages
+          for (var i = 1; i <= pagenum; ) {
+            // for each page append pagination li
+            $('#pagination1 #prev')
+              .before(
+                '<li data-page="' +
+                  i +
+                  '">\
+                                    <span>' +
+                  i++ +
+                  '<span class="sr-only">(current)</span></span>\
+                                  </li>'
+              )
+              .show();
+          } // end for i
+        } // end if row count > max rows
+        $('#pagination1 [data-page="1"]').addClass('active'); // add active class to the first li
+        $('#pagination1 li').on('click', function(evt) {
+          // on click each page
+          evt.stopImmediatePropagation();
+          evt.preventDefault();
+          var pageNum = $(this).attr('data-page'); // get it's number
+  
+          var maxRows = parseInt($('#maxRows2').val()); // get Max Rows from select option
+  
+          if (pageNum == 'prev') {
+            if (lastPage == 1) {
+              return;
+            }
+            pageNum = --lastPage;
+          }
+          if (pageNum == 'next') {
+            if (lastPage == $('#pagination1 li').length - 2) {
+              return;
+            }
+            pageNum = ++lastPage;
+          }
+  
+          lastPage = pageNum;
+          var trIndex = 0; // reset tr counter
+          $('#pagination1 li').removeClass('active'); // remove active class from all li
+          $('#pagination1 [data-page="' + lastPage + '"]').addClass('active'); // add active class to the clicked
+          // $(this).addClass('active');					// add active class to the clicked
+            limitPagging();
+          $(table + ' tr:gt(0)').each(function() {
+            // each tr in table not the header
+            trIndex++; // tr index counter
+            // if tr index gt maxRows*pageNum or lt maxRows*pageNum-maxRows fade if out
+            if (
+              trIndex > maxRows * pageNum ||
+              trIndex <= maxRows * pageNum - maxRows
+            ) {
+              $(this).hide();
+            } else {
+              $(this).show();
+            } //else fade in
+          }); // end of for each tr in table
+        }); // end of on click pagination list
+        limitPagging();
+      })
+      .val(5)
+      .change();
+  
+    // end of on select change
+  
+    // END OF PAGINATION
+  }
+  
+  function limitPagging(){
+      // alert($('.pagination li').length)
+  
+      if($('#pagination li').length > 7 ){
+              if( $('#pagination1 li.active').attr('data-page') <= 2 ){
+              $('#pagination1 li:gt(5)').hide();
+              $('#pagination1 li:lt(5)').show();
+              $('#pagination1 [data-page="next"]').show();
+          }if ($('#pagination1 li.active').attr('data-page') > 3){
+              $('#pagination1 li:gt(0)').hide();
+              $('#pagination1 [data-page="next"]').show();
+              for( let i = ( parseInt($('#pagination1 li.active').attr('data-page'))  -2 )  ; i <= ( parseInt($('#pagination1 li.active').attr('data-page'))  + 2 ) ; i++ ){
+                  $('#pagination1 [data-page="'+i+'"]').show();
+  
+              }
+  
+          }
+      }
+  }
+  
+
+  
+  $("#search2").on("keyup", function() {
+      
+    var value = $(this).val().toLowerCase();
+    $("#table-id2 tr").filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+  });
+</script>
+    <script>
+                  getPagination('#table-id1');
+			
+
+            function getPagination(table) {
+              var lastPage = 1;
+            
+              $('#maxRows1')
+                .on('change', function(evt) {
+                  //$('.paginationprev').html('');						// reset pagination
+            
+                 lastPage = 1;
+                  $('#pagination')
+                    .find('li')
+                    .slice(1, -1)
+                    .remove();
+                  var trnum = 0; // reset tr counter
+                  var maxRows = parseInt($(this).val()); // get Max Rows from select option
+            
+                  if (maxRows1 == 5000) {
+                    $('#pagination').hide();
+                  } else {
+                    $('#pagination').show();
+                  }
+            
+                  var totalRows = $(table + ' tbody tr').length; // numbers of rows
+                  $(table + ' tr:gt(0)').each(function() {
+                    // each TR in  table and not the header
+                    trnum++; // Start Counter
+                    if (trnum > maxRows) {
+                      // if tr number gt maxRows
+            
+                      $(this).hide(); // fade it out
+                    }
+                    if (trnum <= maxRows) {
+                      $(this).show();
+                    } // else fade in Important in case if it ..
+                  }); //  was fade out to fade it in
+                  if (totalRows > maxRows) {
+                    // if tr total rows gt max rows option
+                    var pagenum = Math.ceil(totalRows / maxRows); // ceil total(rows/maxrows) to get ..
+                    //	numbers of pages
+                    for (var i = 1; i <= pagenum; ) {
+                      // for each page append pagination li
+                      $('#pagination #prev')
+                        .before(
+                          '<li data-page="' +
+                            i +
+                            '">\
+                                              <span>' +
+                            i++ +
+                            '<span class="sr-only">(current)</span></span>\
+                                            </li>'
+                        )
+                        .show();
+                    } // end for i
+                  } // end if row count > max rows
+                  $('#pagination [data-page="1"]').addClass('active'); // add active class to the first li
+                  $('#pagination li').on('click', function(evt) {
+                    // on click each page
+                    evt.stopImmediatePropagation();
+                    evt.preventDefault();
+                    var pageNum = $(this).attr('data-page'); // get it's number
+            
+                    var maxRows = parseInt($('#maxRows1').val()); // get Max Rows from select option
+            
+                    if (pageNum == 'prev') {
+                      if (lastPage == 1) {
+                        return;
+                      }
+                      pageNum = --lastPage;
+                    }
+                    if (pageNum == 'next') {
+                      if (lastPage == $('#pagination li').length - 2) {
+                        return;
+                      }
+                      pageNum = ++lastPage;
+                    }
+            
+                    lastPage = pageNum;
+                    var trIndex = 0; // reset tr counter
+                    $('#pagination li').removeClass('active'); // remove active class from all li
+                    $('#pagination [data-page="' + lastPage + '"]').addClass('active'); // add active class to the clicked
+                    // $(this).addClass('active');					// add active class to the clicked
+                      limitPagging();
+                    $(table + ' tr:gt(0)').each(function() {
+                      // each tr in table not the header
+                      trIndex++; // tr index counter
+                      // if tr index gt maxRows*pageNum or lt maxRows*pageNum-maxRows fade if out
+                      if (
+                        trIndex > maxRows * pageNum ||
+                        trIndex <= maxRows * pageNum - maxRows
+                      ) {
+                        $(this).hide();
+                      } else {
+                        $(this).show();
+                      } //else fade in
+                    }); // end of for each tr in table
+                  }); // end of on click pagination list
+                  limitPagging();
+                })
+                .val(5)
+                .change();
+            
+              // end of on select change
+            
+              // END OF PAGINATION
+            }
+            
+            function limitPagging(){
+                // alert($('.pagination li').length)
+            
+                if($('#pagination li').length > 7 ){
+                        if( $('#pagination li.active').attr('data-page') <= 2 ){
+                        $('#pagination li:gt(5)').hide();
+                        $('#pagination li:lt(5)').show();
+                        $('#pagination [data-page="next"]').show();
+                    }if ($('#pagination li.active').attr('data-page') > 3){
+                        $('#pagination li:gt(0)').hide();
+                        $('#pagination [data-page="next"]').show();
+                        for( let i = ( parseInt($('#pagination li.active').attr('data-page'))  -2 )  ; i <= ( parseInt($('#pagination li.active').attr('data-page'))  + 2 ) ; i++ ){
+                            $('#pagination [data-page="'+i+'"]').show();
+            
+                        }
+            
+                    }
+                }
+            }
+            
+          
+            
+            $("#search1").on("keyup", function() {
+                
+              var value = $(this).val().toLowerCase();
+              $("#table-id1 tr").filter(function() {
+                $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+              });
+            });
+</script>
+    <script>
+                  getPagination('#table-id');
+		
+
+        function getPagination(table) {
+          var lastPage = 1;
+        
+          $('#maxRows')
+            .on('change', function(evt) {
+              //$('.paginationprev').html('');						// reset pagination
+        
+             lastPage = 1;
+              $('.pagination')
+                .find('li')
+                .slice(1, -1)
+                .remove();
+              var trnum = 0; // reset tr counter
+              var maxRows = parseInt($(this).val()); // get Max Rows from select option
+        
+              if (maxRows == 5000) {
+                $('.pagination').hide();
+              } else {
+                $('.pagination').show();
+              }
+        
+              var totalRows = $(table + ' tbody tr').length; // numbers of rows
+              $(table + ' tr:gt(0)').each(function() {
+                // each TR in  table and not the header
+                trnum++; // Start Counter
+                if (trnum > maxRows) {
+                  // if tr number gt maxRows
+                  document.write("A2Z");
+                  $(this).hide(); // fade it out
+                }
+                if (trnum <= maxRows) {
+                  $(this).show();
+                } // else fade in Important in case if it ..
+              }); //  was fade out to fade it in
+              if (totalRows > maxRows) {
+                // if tr total rows gt max rows option
+                var pagenum = Math.ceil(totalRows / maxRows); // ceil total(rows/maxrows) to get ..
+                //	numbers of pages
+                for (var i = 1; i <= pagenum; ) {
+                  // for each page append pagination li
+                  $('.pagination #prev')
+                    .before(
+                      '<li data-page="' +
+                        i +
+                        '">\
+                                          <span>' +
+                        i++ +
+                        '<span class="sr-only">(current)</span></span>\
+                                        </li>'
+                    )
+                    .show();
+                } // end for i
+              } // end if row count > max rows
+              $('.pagination [data-page="1"]').addClass('active'); // add active class to the first li
+              $('.pagination li').on('click', function(evt) {
+                // on click each page
+                evt.stopImmediatePropagation();
+                evt.preventDefault();
+                var pageNum = $(this).attr('data-page'); // get it's number
+        
+                var maxRows = parseInt($('#maxRows').val()); // get Max Rows from select option
+        
+                if (pageNum == 'prev') {
+                  if (lastPage == 1) {
+                    return;
+                  }
+                  pageNum = --lastPage;
+                }
+                if (pageNum == 'next') {
+                  if (lastPage == $('.pagination li').length - 2) {
+                    return;
+                  }
+                  pageNum = ++lastPage;
+                }
+        
+                lastPage = pageNum;
+                var trIndex = 0; // reset tr counter
+                $('.pagination li').removeClass('active'); // remove active class from all li
+                $('.pagination [data-page="' + lastPage + '"]').addClass('active'); // add active class to the clicked
+                // $(this).addClass('active');					// add active class to the clicked
+                  limitPagging();
+                $(table + ' tr:gt(0)').each(function() {
+                  // each tr in table not the header
+                  trIndex++; // tr index counter
+                  // if tr index gt maxRows*pageNum or lt maxRows*pageNum-maxRows fade if out
+                  if (
+                    trIndex > maxRows * pageNum ||
+                    trIndex <= maxRows * pageNum - maxRows
+                  ) {
+                    $(this).hide();
+                  } else {
+                    $(this).show();
+                  } //else fade in
+                }); // end of for each tr in table
+              }); // end of on click pagination list
+              limitPagging();
+            })
+            .val(5)
+            .change();
+        
+          // end of on select change
+        
+          // END OF PAGINATION
+        }
+        
+        function limitPagging(){
+            // alert($('.pagination li').length)
+        
+            if($('.pagination li').length > 7 ){
+                    if( $('.pagination li.active').attr('data-page') <= 3 ){
+                    $('.pagination li:gt(5)').hide();
+                    $('.pagination li:lt(5)').show();
+                    $('.pagination [data-page="next"]').show();
+                }if ($('.pagination li.active').attr('data-page') > 3){
+                    $('.pagination li:gt(0)').hide();
+                    $('.pagination [data-page="next"]').show();
+                    for( let i = ( parseInt($('.pagination li.active').attr('data-page'))  -2 )  ; i <= ( parseInt($('.pagination li.active').attr('data-page'))  + 2 ) ; i++ ){
+                        $('.pagination [data-page="'+i+'"]').show();
+        
+                    }
+        
+                }
+            }
+        }
+        
+      
+        
+        $("#search").on("keyup", function() {
+var value = $(this).val().toLowerCase();
+$("#table-id tr").filter(function() {
+$(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+});
+});
+        
+    </script>
 </body>
 
 
